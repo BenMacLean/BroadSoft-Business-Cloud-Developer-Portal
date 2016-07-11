@@ -1,0 +1,51 @@
+.my-div
+  | In order to get started, please provide us with the following details:
+
+form-item(label="'Your application url:'")
+form-item(label="'Contact email:'")
+form-item(label="'Company Name:'")
+form-item(label="'Application Name:'")
+
+.form-item
+  .form-label
+    | Application Type:
+  .form-value
+    select
+      option
+        | All
+      option
+        | Contextual Only
+      option
+        | MicroApp Only
+
+.form-item
+  .form-label
+    | App Category:
+  .form-value
+    select
+      option
+        | Dialogue
+      option
+        | Files
+      option
+        | Social
+      option
+        | Teams
+      option
+        | Utilities
+
+form-item(label="'Sub Category:'" max-length="10")
+form-item(label="'Icon:'")
+form-item(label="'Icon Color:'")
+.form-item
+  .form-label
+    | Public or Private Data:
+  .form-value
+    select
+      option
+        | Public
+      option
+        | Private
+
+button
+  | Register My App
