@@ -1,16 +1,16 @@
 .my-div
   | In order to get started, please provide us with the following details:
 
-form-item(label="'Your application url:'")
-form-item(label="'Contact email:'")
-form-item(label="'Company Name:'")
-form-item(label="'Application Name:'")
+form-item(label="'Your application url:'" model="registeredApp.url")
+form-item(label="'Contact email:'" model="registeredApp.email")
+form-item(label="'Company Name:'" model="registeredApp.company")
+form-item(label="'Application Name:'" model="registeredApp.appName")
 
 .form-item
   .form-label
     | Application Type:
   .form-value
-    select
+    select(ng-model="registeredApp.applicationType")
       option
         | All
       option
@@ -22,7 +22,7 @@ form-item(label="'Application Name:'")
   .form-label
     | App Category:
   .form-value
-    select
+    select(ng-model="registeredApp.appCategory")
       option
         | Dialogue
       option
@@ -34,18 +34,18 @@ form-item(label="'Application Name:'")
       option
         | Utilities
 
-form-item(label="'Sub Category:'" max-length="10")
-form-item(label="'Icon:'")
-form-item(label="'Icon Color:'")
+form-item(label="'Sub Category:'" max-length="10" model="registeredApp.subCategory")
+form-item(label="'Icon:'" model="registeredApp.icon")
+form-item(label="'Icon Color:'" model="registeredApp.iconColor")
 .form-item
   .form-label
     | Public or Private Data:
   .form-value
-    select
+    select(ng-model="registeredApp.isPublic")
       option
         | Public
       option
         | Private
 
-button
+button(ng-click="registerApplication()")
   | Register My App

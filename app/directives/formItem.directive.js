@@ -5,7 +5,8 @@
     return {
       scope: {
         label: '=label',
-        value: '=value'
+        value: '=value',
+        model: '=model'
       },
       templateUrl: '/directives/formItem.template.html'
     };

@@ -11,8 +11,9 @@
   });
 
   angular.module('hubDeveloperPortal').controller('registerCtrl', function($location, $http, $scope) {
-
-
-    return 12;
+    $scope.registeredApp = {};
+    $scope.registerApplication = function(){
+      console.log($scope.registeredApp);
+    }
   });
 })();
