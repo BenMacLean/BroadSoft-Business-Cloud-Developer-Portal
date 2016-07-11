@@ -42,9 +42,9 @@ form-item(label="'Icon Color:'" model="registeredApp.iconColor")
     | Public or Private Data:
   .form-value
     select(ng-model="registeredApp.isPublic")
-      option
+      option(value='true')
         | Public
-      option
+      option(value='false')
         | Private
 
 button(ng-click="registerApplication()")

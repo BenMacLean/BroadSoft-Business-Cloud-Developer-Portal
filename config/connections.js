@@ -28,8 +28,9 @@ module.exports.connections = {
   * Installed by default.                                                    *
   *                                                                          *
   ***************************************************************************/
-  localDiskDb: {
-    adapter: 'sails-disk'
+  staging: {
+    adapter: 'sails-mongo',
+    url: 'mongodb://10.71.0.181:27017,10.71.0.182:27017,10.71.0.183:27017/hubCoreStaging?replicaSet=rs1'
   }
 
   /***************************************************************************
