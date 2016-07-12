@@ -1,42 +1,43 @@
 .my-div
   | In order to get started, please provide us with the following details:
 
-form-item(label="'Your application url:'" model="registeredApp.url")
-form-item(label="'Contact email:'" model="registeredApp.email")
-form-item(label="'Company Name:'" model="registeredApp.company")
-form-item(label="'Application Name:'" model="registeredApp.appName")
+form-item(label="'Your application url:'" model="registeredApp.iframeUrl")
+form-item(label="'Contact email:'" model="registeredApp.appAdminEmail" type="email")
+form-item(label="'Application Name:'" model="registeredApp.name")
+form-item(label="'Application Title:'" model="registeredApp.title")
+
 
 .form-item
   .form-label
     | Application Type:
   .form-value
     select(ng-model="registeredApp.applicationType")
-      option
+      option(value='all')
         | All
-      option
+      option(value='context')
         | Contextual Only
-      option
+      option(value='microapp')
         | MicroApp Only
 
 .form-item
   .form-label
     | App Category:
   .form-value
-    select(ng-model="registeredApp.appCategory")
-      option
+    select(ng-model="registeredApp.tags", multiple)
+      option(value='dialogue')
         | Dialogue
-      option
+      option(value='files')
         | Files
-      option
+      option(value='social')
         | Social
-      option
+      option(value='teams')
         | Teams
-      option
+      option(value='utilities')
         | Utilities
 
-form-item(label="'Sub Category:'" max-length="10" model="registeredApp.subCategory")
-form-item(label="'Icon:'" model="registeredApp.icon")
-form-item(label="'Icon Color:'" model="registeredApp.iconColor")
+form-item(label="'Sub Category:'" max-length="10" model="registeredApp.subTabLabel")
+form-item(label="'Icon Font:'" model="registeredApp.iconFont")
+form-item(label="'Icon Color:'" model="registeredApp.color")
 .form-item
   .form-label
     | Public or Private Data:
