@@ -1,4 +1,5 @@
 module.exports.models = {
   connection: 'localDiskDb',
-  migrate: 'alter'
+  migrate: 'alter',
+  port: 80
 };
