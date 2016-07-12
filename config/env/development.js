@@ -1,5 +1,11 @@
-module.exports.models = {
-  connection: 'localDiskDb',
-  migrate: 'alter',
-  port: 80
+module.exports = {
+  models: {
+    connection: 'localDiskDb',
+    migrate: 'alter'
+  },
+  port: 8443,
+  ssl : {
+    key:  require('fs').readFileSync(process.env['HOME'] + '/secure/server.key'),
+    cert: require('fs').readFileSync(process.env['HOME'] + '/secure/server.crt'),
+  }
 };
