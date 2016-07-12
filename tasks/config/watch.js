@@ -21,12 +21,10 @@ module.exports = function(grunt) {
 		// },
 		app: {
 			// Assets to watch:
-			// files: ['app/**/*', 'tasks/pipeline.js', '!**/node_modules/**', '!**/bower_components/**'],
-			files: ['app/**/*.styl'],
+			files: ['app/**/*', 'tasks/pipeline.js', '!**/node_modules/**', '!**/bower_components/**','app/**/*.styl'],
 
 			// When app are changed:
-			// tasks: ['syncAssets', 'compileAssets', 'linkAssets']
-			tasks: ['stylus']
+			tasks: ['syncAssets', 'compileAssets', 'linkAssets','stylus']
 		}
 	});
   console.log('this grunt task');
