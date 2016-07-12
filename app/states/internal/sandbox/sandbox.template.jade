@@ -1,10 +1,34 @@
 h1 Hub Sandbox
 .iframes-container
-  h2 MicroApp
-  iframe.micro-app-iframe(src="https://dev-core.broadsoftlabs.com:8443/app/internal/settings?id=jodonnell@broadsoft.com&xsp=https:%2F%2Fxsp.ihs.broadsoft.com&pwd=Fender88%5E")
+  .micro-app
+    .iframe-container
+      h2 MicroApp
+      iframe.micro-app-iframe(src="https://dev-core.broadsoftlabs.com:8443/app/internal/settings?id=jodonnell@broadsoft.com&xsp=https:%2F%2Fxsp.ihs.broadsoft.com&pwd=Fender88%5E")
+    .actions
+      h3 How Micro Apps Work
+      p This is where you can see your iframe in action!
 
-  h2 Notifications
-  iframe.notifications-iframe(src="https://dev-core.broadsoftlabs.com:8443/app/notifications?id=jodonnell@broadsoft.com&xsp=https:%2F%2Fxsp.ihs.broadsoft.com&pwd=Fender88%5E")
+  .notifications
+    .iframe-container
+      h2 Notifications
+      iframe.notifications-iframe(src="https://dev-core.broadsoftlabs.com:8443/app/notifications?id=jodonnell@broadsoft.com&xsp=https:%2F%2Fxsp.ihs.broadsoft.com&pwd=Fender88%5E")
+    .actions
+      p This is where you can test your notifications.
+    button Have Hub Request Your Notifications Count
 
-  h2 Contextual
-  iframe.contextual-iframe(src="https://dev-core.broadsoftlabs.com:8443/app/contextual?id=jodonnell@broadsoft.com&xsp=https:%2F%2Fxsp.ihs.broadsoft.com&pwd=Fender88%5E")
+  .contextual
+    .iframe-container
+      h2 Contextual
+      iframe.contextual-iframe(src="https://dev-core.broadsoftlabs.com:8443/app/contextual?id=jodonnell@broadsoft.com&xsp=https:%2F%2Fxsp.ihs.broadsoft.com&pwd=Fender88%5E")
+    .actions
+      h3 Other User Details
+      p This is where you can test the user details in certain scenarios.
+      .label
+        | Email:
+      .form-value
+        input(type="text")
+      .label
+        | Phone Number:
+      .form-value
+        input(type="text")
+      button Have Hub Request Your Contextual Data
