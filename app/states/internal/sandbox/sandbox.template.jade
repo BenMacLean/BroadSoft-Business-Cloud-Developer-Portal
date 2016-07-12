@@ -7,6 +7,7 @@ h1 Hub Sandbox
     .actions
       h3 How Micro Apps Work
       p This is where you can see your iframe in action!
+      button.btn.btn-primary Reset User Auth
 
   .notifications
     .iframe-container
@@ -14,7 +15,7 @@ h1 Hub Sandbox
       iframe.notifications-iframe(src="https://dev-core.broadsoftlabs.com:8443/app/notifications?id=jodonnell@broadsoft.com&xsp=https:%2F%2Fxsp.ihs.broadsoft.com&pwd=Fender88%5E")
     .actions
       p This is where you can test your notifications.
-    button Have Hub Request Your Notifications Count
+    button.btn.btn-primary(ng-click="requestNotifications()") Request Count
 
   .contextual
     .iframe-container
@@ -22,7 +23,7 @@ h1 Hub Sandbox
       iframe.contextual-iframe(src="https://dev-core.broadsoftlabs.com:8443/app/contextual?id=jodonnell@broadsoft.com&xsp=https:%2F%2Fxsp.ihs.broadsoft.com&pwd=Fender88%5E")
     .actions
       h3 Other User Details
-      p This is where you can test the user details in certain scenarios.
+      p This is where you can test the user details in certain scenarios. Clicking the "Request Contextual Data button will cause Hub to send your application a request for contextual data.
       .label
         | Email:
       .form-value
@@ -31,4 +32,4 @@ h1 Hub Sandbox
         | Phone Number:
       .form-value
         input(type="text")
-      button Have Hub Request Your Contextual Data
+      button.btn.btn-primary Request Contextual Data

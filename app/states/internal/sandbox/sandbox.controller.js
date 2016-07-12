@@ -12,5 +12,9 @@
 
   angular.module('hubDeveloperPortal').controller('sandboxCtrl', function($location, $http, $scope, $state) {
     console.log('sandbox controller');
+
+    $scope.requestNotifications = function(){
+      
+    }
   });
 })();

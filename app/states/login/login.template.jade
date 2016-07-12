@@ -1,13 +1,15 @@
 .login-container
   .topNav
     a(href="https://docs.google.com/document/d/1NAwOuWIJ1rau1Xgd_8DU78xeef5cyciOmcDLU3UeEC0/edit#") Docs
-    a(href="https://www.youtube.com/channel/UCooaiKRyfGHF_L5-CJzaDkQ") Video Demo
     a(href="https://www.youtube.com/channel/UCooaiKRyfGHF_L5-CJzaDkQ") Video Tutorials
     a(href="https://github.com/BroadsoftLabs/helloWorldSampleApp") Hello World
     a(href="https://github.com/BroadsoftLabs/triviaSampleApp") Trivia Sample App
 
   .my-div-title
     | Hub Developer Program
+
+  .welcome-container
+    iframe(width="560" height="315" src="https://www.youtube.com/embed/ndKRjmA6WNA" frameborder="0" allowfullscreen)
 
   .my-div
     .my-div-please-sign-in
@@ -16,18 +18,18 @@
       .form-label
         | Username:
       .form-value
-        input(type="text")
+        input.form-control(type="text")
     .form-item
       .form-label
         | Password:
       .form-value
-        input(type="text")
+        input.form-control(type="text")
 
   .buttons
-    a.login(href="/#/internal/register")
+    a.login.btn.btn-primary(href="/#/internal/register")
       | Login
-    a.signup(href="https://broadsoftlabs.com/" target="_blank")
+    a.signup.btn.btn-success(href="https://broadsoftlabs.com/" target="_blank")
       | Sign Up
 
   .my-div-account
-      | Don't have a BroadSoftLabs account? Sign up for one for free today!
+      | Don't have a BroadSoftLabs account? Create one for free today!
