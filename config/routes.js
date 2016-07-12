@@ -24,5 +24,6 @@ module.exports.routes = {
   //Oauth
   '/google/callback': 'GoogleController.callback',
   '/auth/google': 'AuthController.google',
-  '/createRegisteredApp': 'UtilController.createRegisteredApp'
+  '/createRegisteredApp': 'UtilController.createRegisteredApp',
+  '/user/login':'UserController.login'
 };
