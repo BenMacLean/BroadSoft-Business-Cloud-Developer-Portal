@@ -62,6 +62,8 @@
     "ng-html2js": "^2.0.0",
     "phantomjs": "^1.9.19",
     "require": "^2.4.20",
+    "shipit-cli": "^1.4.1",
+    "shipit-deploy": "^2.2.0",
     "should": "^7.0.4",
     "supertest": "^1.0.1"
   },
