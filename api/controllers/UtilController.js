@@ -38,5 +38,15 @@ module.exports = {
       console.log(error);
     });
 
+  },
+  redirect: function(req, res) {
+    var query = require('url').parse(req.url).query || '';
+    res.redirect('/#' + req.path + '?' + query);
+  },
+  checkAuth:function (req,res) {
+    if(req.session.authenticated){
+      return res.send(true);
+    }
+    return res.send(400,'Not authenticated');
   }
 };
