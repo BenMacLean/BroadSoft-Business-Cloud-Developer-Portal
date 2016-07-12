@@ -1,7 +1,8 @@
 module.exports.models = {
   models: {
     connection: 'staging',
-    migrate: 'alter'
+    migrate: 'alter',
+    port: 80
   }
 
 };

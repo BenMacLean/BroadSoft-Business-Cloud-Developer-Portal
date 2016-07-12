@@ -15,7 +15,17 @@ h1 Hub Sandbox
       iframe.notifications-iframe(src="https://dev-core.broadsoftlabs.com:8443/app/notifications?id=jodonnell@broadsoft.com&xsp=https:%2F%2Fxsp.ihs.broadsoft.com&pwd=Fender88%5E")
     .actions
       p This is where you can test your notifications.
-    button.btn.btn-primary(ng-click="requestNotifications()") Request Count
+    button.btn.btn-primary(ng-click="requestNotifications(); notificationsSent = true") Request Count
+
+  .api(ng-show="notificationsSent")
+    h3 What we sent you:
+    code
+      | GET https://baseurl.com/v1/:app/:username/notifications
+    h3 What you sent us:
+    code
+      | Response Code: 200 { "count": 12 }
+    h3 Error Message
+    p It seems you have not sent us a valid auth token please try again (Add stacktrace here.)
 
   .contextual
     .iframe-container
