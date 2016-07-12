@@ -3,11 +3,10 @@ module.exports = {
     var registeredApp = req.params.all();
     registeredApp.isExternalApplication = true;
     // start filling in some (presumably) backend set values
-    // TODO: this looks important, fix this!
-    registeredApp.index = 0;
     registeredApp.apiVersion = 1;
     registeredApp.version = 2;
     registeredApp.approved = false;
+    registeredApp.isExternal = true;
     // start parsing submitted values
     registeredApp.isPublic = (registeredApp.isPublic === "true") ? true : false;
     switch (registeredApp.applicationType) {
@@ -35,6 +34,8 @@ module.exports = {
     RegisteredApp.create(registeredApp).then(function(created){
       console.log(created);
       res.send(200);
+    }).catch(function(error){
+      console.log(error);
     });
 
   }
