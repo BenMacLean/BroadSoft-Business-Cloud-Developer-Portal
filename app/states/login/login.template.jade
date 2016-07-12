@@ -8,7 +8,8 @@
 
   .my-div-title
     | Hub Developer Program
-
+  .welcome-container
+    iframe(width="560" height="315" src="https://www.youtube.com/embed/ndKRjmA6WNA" frameborder="0" allowfullscreen)
   .my-div
     .my-div-please-sign-in
       | Please sign in with your BroadSoftLabs account:
@@ -24,10 +25,10 @@
         input(type="password" ng-model="password")
 
   .buttons
-    a.login(href="#" ng-click="login()")
+    a.login.btn.btn-primary(href="#" ng-click="login()")
       | Login
-    a.signup(href="https://broadsoftlabs.com/" target="_blank")
+    a.signup.btn.btn-success(href="https://broadsoftlabs.com/" target="_blank")
       | Sign Up
 
   .my-div-account
-      | Don't have a BroadSoftLabs account? Sign up for one for free today!
+      | Don't have a BroadSoftLabs account? Create for one for free today!
