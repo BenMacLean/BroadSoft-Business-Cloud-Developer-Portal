@@ -23,15 +23,13 @@ var jsFilesToInject = [
   "bower_components/angular/angular.js",
   "bower_components/angular-ui-router/release/angular-ui-router.min.js",
   "bower_components/angular-route/angular-route.js",
-  "bower_components/angular-base64/angular-base64.js",
   "bower_components/underscore/underscore-min.js",
 
   // All of the rest of your client-side js files
   // will be injected here in no particular order.
   'app.js',
   'directives/**/*.js',
-  'states/**/*.controller.js',
-  'services/**/*.service.js'
+  'states/**/*.controller.js'
 ];
 
 // Client-side HTML templates are injected using the sources below
