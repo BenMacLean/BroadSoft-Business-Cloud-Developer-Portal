@@ -3,7 +3,7 @@ module.exports = {
     connection: 'localDiskDb',
     migrate: 'alter'
   },
-  port: 8443,
+  port: 443,
   ssl : {
     key:  require('fs').readFileSync(process.env['HOME'] + '/secure/server.key'),
     cert: require('fs').readFileSync(process.env['HOME'] + '/secure/server.crt'),
