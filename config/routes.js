@@ -21,8 +21,12 @@
  */
 
 module.exports.routes = {
+  '/internal/*': 'UtilController.redirect',
+  '/login': 'UtilController.redirect',
   //Oauth
   '/google/callback': 'GoogleController.callback',
   '/auth/google': 'AuthController.google',
-  '/createRegisteredApp': 'UtilController.createRegisteredApp'
+  '/createRegisteredApp': 'UtilController.createRegisteredApp',
+  '/user/login':'UserController.login',
+  '/util/checkAuth':'UtilController.checkAuth'
 };
