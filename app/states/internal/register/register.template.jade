@@ -1,29 +1,28 @@
 h1 In order to get started, please provide us with the following details:
-
 div(class="form-group")
   label(for="register-application-url")
     | Your application URL
-  input#register-application-url(ng-model="registeredApp.iframeUrl", class="form-control")
+  input#register-application-url(ng-model="registeredApp.iframeUrl", class="form-control" required)
 
 div(class="form-group")
   label(for="register-contact-email")
     | Contact Email Address
-  input#register-contact-email(ng-model="registeredApp.appAdminEmail", class="form-control", type="email")
+  input#register-contact-email(ng-model="registeredApp.appAdminEmail", class="form-control", type="email" required)
     
 div(class="form-group")
   label(for="register-application-name")
     | Application Name
-  input#register-application-name(ng-model="registeredApp.name", class="form-control")
+  input#register-application-name(ng-model="registeredApp.name", class="form-control" required)
 
 div(class="form-group")
   label(for="register-application-title")
     | Application Title
-  input#register-application-title(ng-model="registeredApp.title", class="form-control")
+  input#register-application-title(ng-model="registeredApp.title", class="form-control" required)
 
 div(class="form-group")
   label(for="register-application-type")
     | Application Type
-  select#register-application-type(ng-model="registeredApp.applicationType", class="form-control")
+  select#register-application-type(ng-model="registeredApp.applicationType", class="form-control", required)
     option(value="all")
       | All
     option(value="context")
@@ -34,7 +33,7 @@ div(class="form-group")
 div(class="form-group")
   label(for="register-application-type")
     | Application Category
-  select#register-application-type(ng-model="registeredApp.tags", class="form-control", multiple)
+  select#register-application-type(ng-model="registeredApp.tags", class="form-control", multiple, required)
     option(value="dialogue")
       | Dialogue
     option(value="files")
@@ -49,17 +48,17 @@ div(class="form-group")
 div(class="form-group")
   label(for="register-sub-category")
     | Sub Category
-  input#register-sub-category(ng-model="registeredApp.subTagLabel", class="form-control", max-length="10")
+  input#register-sub-category(ng-model="registeredApp.subTagLabel", class="form-control", max-length="10" required)
     
 div(class="form-group")
   label(for="register-icon-font")
     | Icon Font
-  input#register-icon-font(ng-model="registeredApp.iconFont", class="form-control")
+  input#register-icon-font(ng-model="registeredApp.iconFont", class="form-control" required)
 
 div(class="form-group")
   label(for="register-icon-color")
     | Icon Color
-  input#register-icon-color(ng-model="registeredApp.color", class="form-control")
+  input#register-icon-color(ng-model="registeredApp.color", class="form-control" required)
 
 div(class="form-group")
   label

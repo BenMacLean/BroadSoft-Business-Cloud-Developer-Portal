@@ -48,5 +48,8 @@ module.exports = {
       return res.send(true);
     }
     return res.send(400,'Not authenticated');
+  },
+  constants:function (req,res) {
+    return res.send(sails.config.constants);
   }
 };

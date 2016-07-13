@@ -27,6 +27,7 @@ module.exports = {
 
     if (req.session.authenticated && (!params.id || params.id === req.session.userId)) {
       sails.log('xspAuth', 'I got the user who was previously authed');
+      res.send(params.id);
     } else {
       req.session.authenticated = false;
       sails.log('I am now going to authenticate');
