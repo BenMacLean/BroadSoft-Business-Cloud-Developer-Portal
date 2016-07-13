@@ -10,8 +10,15 @@
     });
   });
 
-  angular.module('hubDeveloperPortal').controller('sandboxCtrl', function($location, $http, $scope, $state) {
+  angular.module('hubDeveloperPortal').controller('sandboxCtrl', function($location, $http, $scope, cookies, $sce) {
     console.log('sandbox controller');
+
+    var credsString = 'id=' + cookies.get('email') + '&xsp=' + cookies.get('xsp') + '&pwd=' + cookies.get('password');
+    
+    $scope.microApps = $sce.trustAsResourceUrl('https://dev-core.broadsoftlabs.com:8443/app/internal/settings?' + credsString);
+    $scope.notifications = $sce.trustAsResourceUrl('https://dev-core.broadsoftlabs.com:8443/app/notifications?' + credsString);
+    $scope.contextual = $sce.trustAsResourceUrl('https://dev-core.broadsoftlabs.com:8443/app/contextual?' + credsString);
+    $scope.google = 'http://google.com';
 
     $scope.requestNotifications = function(){
       

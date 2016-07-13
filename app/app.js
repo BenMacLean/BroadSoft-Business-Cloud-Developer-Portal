@@ -1,9 +1,8 @@
 (function () {
   'use strict';
 
-  // Declare app level module which depends on views, and components
   angular.module('hubDeveloperPortal', [
-    'ngRoute', 'ui.router'
+    'ngRoute', 'ui.router', 'ngCookies'
   ]);
 
   angular.module('hubDeveloperPortal').config(function($urlRouterProvider) {

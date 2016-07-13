@@ -22,6 +22,7 @@ var cssFilesToInject = [
 var jsFilesToInject = [
   "bower_components/angular/angular.js",
   "bower_components/angular-ui-router/release/angular-ui-router.min.js",
+  "bower_components/angular-cookies/angular-cookies.min.js",
   "bower_components/angular-route/angular-route.js",
   "bower_components/underscore/underscore-min.js",
 
@@ -29,6 +30,7 @@ var jsFilesToInject = [
   // will be injected here in no particular order.
   'app.js',
   'directives/**/*.js',
+  'services/**/*.js',
   'states/**/*.controller.js'
 ];
 
