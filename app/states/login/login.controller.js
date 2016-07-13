@@ -10,10 +10,7 @@
     });
   });
 
-  angular.module('hubDeveloperPortal').controller('loginCtrl', function ($scope,$rootScope, $http, $state) {
-    $scope.testAngular = function () {
-      $scope.myVar = 'Hello World Angular!';
-    };
+  angular.module('hubDeveloperPortal').controller('loginCtrl', function ($scope,$rootScope, $http, $state, cookies) {
     $scope.login = function () {
       var urls = [
         'https://xsp2.broadsoftlabs.com',
@@ -22,6 +19,9 @@
       ];
       var makeRequest = function(url){
         return $http.get('/user/login?id=' + $scope.email + '&pwd='+$scope.password+'&xsp='+url).then(function (response) {
+          cookies.set('xsp', url);
+          cookies.set('email', $scope.email);
+          cookies.set('password', $scope.password);
           return $state.go('internal.register');
         }, function (error) {
           throw error;
