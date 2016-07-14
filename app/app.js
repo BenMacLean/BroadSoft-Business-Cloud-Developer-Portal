@@ -1,9 +1,8 @@
 (function () {
   'use strict';
 
-  // Declare app level module which depends on views, and components
   angular.module('hubDeveloperPortal', [
-    'ngRoute', 'ui.router', 'validation', 'validation.rule', 'ngStorage'
+    'ngRoute', 'ui.router', 'validation', 'validation.rule', 'ngStorage','ngCookies'
   ]).config(['$validationProvider', function($validationProvider) {
     var defaultMsg;
     defaultMsg = {
