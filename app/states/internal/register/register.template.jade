@@ -1,76 +1,77 @@
 h1 In order to get started, please provide us with the following details:
-div(class="form-group")
-  label(for="register-application-url")
-    | Your application URL
-  input#register-application-url(ng-model="registeredApp.iframeUrl", class="form-control" required)
+form(name="Form")
+  div(class="form-group")
+    label(for="register-application-url")
+      | Your application URL
+    input#register-application-url(ng-model="registeredApp.iframeUrl", class="form-control" validator="required, url",url-error-message="Invalid Url" url-success-message=" ")
 
-div(class="form-group")
-  label(for="register-contact-email")
-    | Contact Email Address
-  input#register-contact-email(ng-model="registeredApp.appAdminEmail", class="form-control", type="email" required)
-    
-div(class="form-group")
-  label(for="register-application-name")
-    | Application Name
-  input#register-application-name(ng-model="registeredApp.name", class="form-control" required)
+  div(class="form-group")
+    label(for="register-contact-email")
+      | Contact Email Address
+    input#register-contact-email(ng-model="registeredApp.appAdminEmail", class="form-control", type="email" validator="required")
+      
+  div(class="form-group")
+    label(for="register-application-name")
+      | Application Name
+    input#register-application-name(ng-model="registeredApp.name", class="form-control" validator="required")
 
-div(class="form-group")
-  label(for="register-application-title")
-    | Application Title
-  input#register-application-title(ng-model="registeredApp.title", class="form-control" required)
+  div(class="form-group")
+    label(for="register-application-title")
+      | Application Title
+    input#register-application-title(ng-model="registeredApp.title", class="form-control" validator="required")
 
-div(class="form-group")
-  label(for="register-application-type")
-    | Application Type
-  select#register-application-type(ng-model="registeredApp.applicationType", class="form-control", required)
-    option(value="all")
-      | All
-    option(value="context")
-      | Contextual Only
-    option(value="microapp")
-      | MicroApp Only
+  div(class="form-group")
+    label(for="register-application-type")
+      | Application Type
+    select#register-application-type(ng-model="registeredApp.applicationType", class="form-control", validator="required")
+      option(value="all")
+        | All
+      option(value="context")
+        | Contextual Only
+      option(value="microapp")
+        | MicroApp Only
 
-div(class="form-group")
-  label(for="register-application-type")
-    | Application Category
-  select#register-application-type(ng-model="registeredApp.tags", class="form-control", multiple, required)
-    option(value="dialogue")
-      | Dialogue
-    option(value="files")
-      | Files
-    option(value="social")
-      | Social
-    option(value="teams")
-      | Teams
-    option(value="utilities")
-      | Utilities
+  div(class="form-group")
+    label(for="register-application-type")
+      | Application Category
+    select#register-application-type(ng-model="registeredApp.tags", class="form-control", multiple, validator="required")
+      option(value="dialogue")
+        | Dialogue
+      option(value="files")
+        | Files
+      option(value="social")
+        | Social
+      option(value="teams")
+        | Teams
+      option(value="utilities")
+        | Utilities
 
-div(class="form-group")
-  label(for="register-sub-category")
-    | Sub Category
-  input#register-sub-category(ng-model="registeredApp.subTagLabel", class="form-control", max-length="10" required)
-    
-div(class="form-group")
-  label(for="register-icon-font")
-    | Icon Font
-  input#register-icon-font(ng-model="registeredApp.iconFont", class="form-control" required)
+  div(class="form-group")
+    label(for="register-sub-category")
+      | Sub Category
+    input#register-sub-category(ng-model="registeredApp.subTagLabel", class="form-control", max-length="10" validator="required")
+      
+  div(class="form-group")
+    label(for="register-icon-font")
+      | Icon Font
+    input#register-icon-font(ng-model="registeredApp.iconFont", class="form-control" validator="required")
 
-div(class="form-group")
-  label(for="register-icon-color")
-    | Icon Color
-  input#register-icon-color(ng-model="registeredApp.color", class="form-control" required)
+  div(class="form-group")
+    label(for="register-icon-color")
+      | Icon Color
+    input#register-icon-color(ng-model="registeredApp.color", class="form-control" validator="required")
 
-div(class="form-group")
-  label
-    | Public or Private data
-    div(class="radio")
-      label
-        input#register-public-app(ng-model="registeredApp.isPublic", name="isPublic", type="radio", value="true")
-        | Public
-    div(class="radio")
-      label
-        input#register-private-app(ng-model="registeredApp.isPublic", name="isPublic", type="radio", value="false")
-        | Private
+  div(class="form-group")
+    label
+      | Public or Private data
+      div(class="radio")
+        label
+          input#register-public-app(ng-model="registeredApp.isPublic", name="isPublic", type="radio", value="true")
+          | Public
+      div(class="radio")
+        label
+          input#register-private-app(ng-model="registeredApp.isPublic", name="isPublic", type="radio", value="false")
+          | Private
 
-button#register-submit(class="btn btn-primary", type="button", ng-click="registerApplication()")
-  | Register My App
+  button#register-submit(class="btn btn-primary",validation-submit="Form", type="button", ng-click="registerApplication()")
+    | Register My App

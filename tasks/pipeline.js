@@ -23,6 +23,9 @@ var jsFilesToInject = [
   "bower_components/angular/angular.js",
   "bower_components/angular-ui-router/release/angular-ui-router.min.js",
   "bower_components/angular-route/angular-route.js",
+  "bower_components/ngstorage/ngStorage.js",
+  "bower_components/angular-validation/dist/angular-validation.js",
+  "bower_components/angular-validation/dist/angular-validation-rule.js",
   "bower_components/underscore/underscore-min.js",
 
   // All of the rest of your client-side js files

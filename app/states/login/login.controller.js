@@ -10,18 +10,18 @@
     });
   });
 
-  angular.module('hubDeveloperPortal').controller('loginCtrl', function ($scope, $rootScope, $http, $state) {
+  angular.module('hubDeveloperPortal').controller('loginCtrl', function ($scope, $rootScope, $http, $state,$sessionStorage) {
     $scope.testAngular = function () {
       $scope.myVar = 'Hello World Angular!';
     };
     $scope.login = function () {
-      $rootScope.urls = [
+      $sessionStorage.urls = [
         'https://xsp2.broadsoftlabs.com',
         'https://xsp1.broadsoftlabs.com',
         'https://xsp.broadsoftlabs.com'
       ];
-      $rootScope.email = $scope.email;
-      $rootScope.password = $scope.password;
+      $sessionStorage.email = $scope.email;
+      $sessionStorage.password = $scope.password;
       var makeRequest = function (url) {
         return $http.get('/user/login?id=' + $scope.email + '&pwd=' + $scope.password + '&xsp=' + url).then(function (response) {
           return $state.go('internal.register');
@@ -29,9 +29,9 @@
           throw error;
         });
       };
-      makeRequest($rootScope.urls[0]).catch(function (err) {
-        makeRequest($rootScope.urls[1]).catch(function (err) {
-          makeRequest($rootScope.urls[2]).catch(function (err) {
+      makeRequest($sessionStorage.urls[0]).catch(function (err) {
+        makeRequest($sessionStorage.urls[1]).catch(function (err) {
+          makeRequest($sessionStorage.urls[2]).catch(function (err) {
             throw err;
           });
         });
