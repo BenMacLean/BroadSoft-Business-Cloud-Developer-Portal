@@ -28,5 +28,8 @@
     "angular-validation": "^1.4.1",
     "ngstorage": "^0.3.10",
     "angular-cookies": "^1.5.7"
+  },
+  "resolutions": {
+    "angular": "1.5.7"
   }
 }

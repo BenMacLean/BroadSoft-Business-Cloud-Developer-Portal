@@ -18,14 +18,13 @@
         'https://xsp1.broadsoftlabs.com',
         'https://xsp.broadsoftlabs.com'
       ];
-      $sessionStorage.email = $scope.email;
-      $sessionStorage.password = $scope.password;
+
       var makeRequest = function (url) {
         return $http.get('/user/login?id=' + $scope.email + '&pwd=' + $scope.password + '&xsp=' + url).then(function (response) {
           cookies.set('xsp', url);
           cookies.set('email', $scope.email);
           cookies.set('password', $scope.password);
-          return $state.go('internal.register');
+          return $state.go('internal.appsList');
         }, function (error) {
           throw error;
         });

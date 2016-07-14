@@ -1,0 +1,10 @@
+h1 Hub AppsList for {{storage.email}}
+.row
+  .col-sm-offset-2.col-sm-12
+    .appContainer(ng-repeat="app in userApps")
+      h3 {{app.name}}
+      button.btn.btn-primary(ui-sref="internal.editApp({appName:app.name})") Edit
+      button.btn.btn-primary Delete
+.row
+  .col-sm-offset-2.col-sm-6
+    button.btn.btn-primary.form-control(ui-sref="internal.register") Create 

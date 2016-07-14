@@ -5,13 +5,7 @@
     $stateProvider.state('internal.register', {
       url: '/register',
       templateUrl: 'states/internal/register/register.template.html',
-      resolve: {
-        constants: function ($http) {
-          return $http.get('/constants').then(function (constants) {
-            return constants;
-          });
-        }
-      },
+      resolve: {},
       controller: 'registerCtrl'
     });
   });

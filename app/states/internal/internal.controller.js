@@ -5,7 +5,13 @@
     $stateProvider.state('internal', {
       url: '/internal',
       templateUrl: 'states/internal/internal.template.html',
-      resolve: {},
+      resolve: {
+        constants: function ($http) {
+          return $http.get('/constants').then(function (constants) {
+            return constants;
+          });
+        }
+      },
       controller: 'internalCtrl'
     });
   });
