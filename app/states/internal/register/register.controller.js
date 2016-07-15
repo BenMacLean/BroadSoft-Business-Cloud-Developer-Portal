@@ -10,12 +10,12 @@
     });
   });
 
-  angular.module('hubDeveloperPortal').controller('registerCtrl', function ($location, $http, $scope, $rootScope, $state, constants,$sessionStorage) {
+  angular.module('hubDeveloperPortal').controller('registerCtrl', function ($location, $http, $scope, $rootScope, $state, constants, $sessionStorage, cookies) {
     console.log("constants", constants.data.hubUrl);
     $scope.registeredApp = {};
     $scope.registerApplication = function () {
-      console.log("register was called");
-      $http.post(constants.data.hubUrl + '/createRegisteredApp?id=' + $sessionStorage.email + '&pwd=' + $sessionStorage.password + '&xsp=' + $sessionStorage.urls[0], $scope.registeredApp).then(function (createdApp) {
+      var credsString = '?id=' + cookies.get('email') + '&xsp=' + cookies.get('xsp') + '&pwd=' + cookies.get('password');
+      $http.post(constants.data.hubUrl + '/createRegisteredApp' + credsString, $scope.registeredApp).then(function (createdApp) {
         console.log("Your application was created,", createdApp);
         $state.go('internal.sandbox');
       });
