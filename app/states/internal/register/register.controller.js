@@ -14,6 +14,9 @@
     $scope.registeredApp = {};
     $scope.registerApplication = function(){
       console.log($scope.registeredApp);
+      $scope.registeredApp.svgIcon = $scope.registeredApp.iconFont.base64;
+      delete $scope.registeredApp.iconFont;
+      console.log($scope.registeredApp);
       $http.post('/createRegisteredApp', $scope.registeredApp, function(createdApp){
         console.log("Your application was created,", createdApp);
       });

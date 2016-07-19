@@ -26,6 +26,7 @@ var jsFilesToInject = [
   "bower_components/angular-route/angular-route.js",
   "bower_components/underscore/underscore-min.js",
   "bower_components/angular-bootstrap-colorpicker/js/bootstrap-colorpicker-module.js",
+  "bower_components/angular-base64-upload/dist/angular-base64-upload.js",
 
   // All of the rest of your client-side js files
   // will be injected here in no particular order.
