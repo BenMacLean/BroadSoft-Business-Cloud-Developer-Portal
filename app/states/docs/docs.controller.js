@@ -2,17 +2,16 @@
   'use strict';
 
   angular.module('hubDeveloperPortal').config(function ($stateProvider) {
-    $stateProvider.state('login', {
-      url: '/login',
-      templateUrl: 'states/login/login.template.html',
+    $stateProvider.state('docs', {
+      url: '/docs',
+      templateUrl: 'states/docs/docs.template.html',
       resolve: {},
-      controller: 'loginCtrl'
+      controller: 'docsCtrl'
     });
   });
 
-  angular.module('hubDeveloperPortal').controller('loginCtrl', function ($scope, $rootScope, $http, $state,$sessionStorage, cookies) {
-    $scope.email = 'jon.staging@broadsoftlabs.com';
-    $scope.password = 'password';
+  angular.module('hubDeveloperPortal').controller('docsCtrl', function ($scope, $rootScope, $http, $state,$sessionStorage, cookies) {
+
     $scope.login = function () {
       $sessionStorage.urls = [
         'https://xsp2.broadsoftlabs.com',

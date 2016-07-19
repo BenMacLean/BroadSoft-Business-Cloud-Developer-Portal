@@ -28,5 +28,6 @@ module.exports.routes = {
   '/auth/google': 'AuthController.google',
   '/createRegisteredApp': 'UtilController.createRegisteredApp',
   '/user/login':'UserController.login',
-  '/util/checkAuth':'UtilController.checkAuth'
+  '/util/checkAuth':'UtilController.checkAuth',
+  '/constants':'UtilController.constants'
 };

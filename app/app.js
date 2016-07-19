@@ -2,10 +2,23 @@
   'use strict';
 
   angular.module('hubDeveloperPortal', [
-    'ngRoute', 'ui.router', 'ngCookies', 'colorpicker.module', 'naif.base64'
-  ]);
+    'ngRoute', 'ui.router', 'validation', 'validation.rule', 'ngStorage','ngCookies', 'colorpicker.module','naif.base64'
+  ]).config(['$validationProvider', function($validationProvider) {
+    var defaultMsg;
+    defaultMsg = {
+      url: {
+        error: 'Invalid url',
+        success: ''
+      },
+      required: {
+        error: 'This is a required field',
+        success: ''
+      }
+    };
+    $validationProvider.setDefaultMsg(defaultMsg);
+  }]);
 
-  angular.module('hubDeveloperPortal').config(function($urlRouterProvider) {
+  angular.module('hubDeveloperPortal').config(function ($urlRouterProvider) {
     $urlRouterProvider.otherwise('/login');
   });
 })();
