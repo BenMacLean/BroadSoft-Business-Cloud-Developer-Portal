@@ -10,15 +10,14 @@
     });
   });
 
-  angular.module('hubDeveloperPortal').controller('sandboxCtrl', function($location, $http, $scope, cookies, $sce) {
-    console.log('sandbox controller');
-
+  angular.module('hubDeveloperPortal').controller('sandboxCtrl', function($location, $http, $scope, cookies, $sce,constants) {
+    console.log('sandbox controller'); 
     var credsString = 'id=' + cookies.get('email') + '&xsp=' + cookies.get('xsp') + '&pwd=' + cookies.get('password');
 
     $scope.email = 'jodonnell@broadsoft.com';
     $scope.phoneNumber = '15554443333';
 
-    var baseUrl = 'https://hub-sandbox.broadsoftlabs.com:8443';
+    var baseUrl = constants.data.hubUrl;
 
     $scope.microApps = $sce.trustAsResourceUrl(baseUrl + '/app/internal/settings?' + credsString);
     $scope.notifications = $sce.trustAsResourceUrl(baseUrl + '/app/notifications?' + credsString);
