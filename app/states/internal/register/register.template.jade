@@ -59,7 +59,8 @@ div(class="form-group")
 div(class="form-group")
   label(for="register-icon-color")
     | Icon Color
-  input#register-icon-color(ng-model="registeredApp.color", class="form-control")
+  //input#register-icon-color(ng-model="registeredApp.color", class="form-control")
+  input(class="form-control" colorpicker="hex" type="text" ng-model="registeredApp.color")
 
 div(class="form-group")
   label
