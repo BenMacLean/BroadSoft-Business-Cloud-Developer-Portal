@@ -20,9 +20,9 @@
 
     var baseUrl = 'https://hub-sandbox.broadsoftlabs.com:8443';
     
-    $scope.microApps = $sce.trustAsResourceUrl('https://dev-core.broadsoftlabs.com:8443/app/internal/settings?' + credsString);
-    $scope.notifications = $sce.trustAsResourceUrl('https://dev-core.broadsoftlabs.com:8443/app/notifications?' + credsString);
-    $scope.contextual = $sce.trustAsResourceUrl('https://dev-core.broadsoftlabs.com:8443/app/contextual?' + credsString);
+    $scope.microApps = $sce.trustAsResourceUrl(baseUrl + '/app/internal/settings?' + credsString);
+    $scope.notifications = $sce.trustAsResourceUrl(baseUrl + '/app/notifications?' + credsString);
+    $scope.contextual = $sce.trustAsResourceUrl(baseUrl + '/app/contextual?' + credsString);
     $scope.google = 'http://google.com';
 
     var otherUserData = {
