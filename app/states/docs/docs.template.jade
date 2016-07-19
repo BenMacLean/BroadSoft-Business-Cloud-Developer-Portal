@@ -1,0 +1,57 @@
+custom-header
+.site-content.fullWidth
+  .row
+    .col-sm-4.col-md-3.col-lg-2.side-menu
+      section#sidebar.docs(data-offset-top='0px')
+        h4 Overview
+        a.selected(href='getting-started.html') Notifications
+        a(href='quick-reference.html') Contextual
+        a(href='authentication.html') Microapp
+        a(href='pagination.html') BroadSearch
+        a(href='attachments.html') Settings
+        
+        h4 Best Practices
+        a.selected(href='getting-started.html') Approved Frameworks
+        a(href='quick-reference.html') Performance
+        a(href='authentication.html') Security
+        a(href='pagination.html') App languages/localization
+        a(href='attachments.html') Style Guide
+        
+        
+    .col-sm-8.col-md-9.col-lg-10.main-content-row(style='min-height: 792px;')
+      section#started.main-content
+        h1 1.0 Overview
+        p
+          | UC-One Hub is a BroadSoft cloud service providing direct access to cloud applications that have been pre-integrated with UC-One – allowing users to be more efficient and productive. These integrations bring a lite client experience and contextual data to your day-to-day communications via UC-One.  UC-One Communicator for Desktop-Chrome is the first client to be integrated with Hub, with other client experiences to follow.
+        p
+          | To do this, Hub integrates into the Chrome client experience in three different ways, the MicroApp View, the Notification bar (which also serves as the navigation bar), and the Contextual data view.
+          | As you build your integration into Hub, your application data will be inserted through the use of a “webview” or iframe elements.
+        p
+          | Below is an illustration of how the three components of Hub (Notifications, Contextual, MicroApp) integrate into the UC-One Chrome experience.
+        .col-sm-12
+          img.doc-image(src="assets/images/image07.png")
+        
+        .col-sm-6.new-section
+          h2 1.1 Notifications
+        .col-sm-6
+          img.doc-image(src="assets/images/image08.png")
+        .col-sm-12
+          p
+            | In the notifications bar, you’ll have an icon for your application, which will act as a reference point for application notifications and navigation. This view is always shown while communicator is open and provides users a heads-up view of items that require their action and a point to navigate to different applications.
+          p
+            | When a user clicks on the notifications icon that corresponds to your app, the MicroApp pane will then shift to your MicroApp pane regardless of where the user is in Communicator at the time.
+          p
+            | What can I set here?
+          ul
+            li 
+              | App icon for notification uploaded on app registration page (SVG, WOFF)
+            li
+              | This is elaborated in section 4.2
+          
+        .col-sm-12.new-section
+          h2 1.2 Contextual
+        .col-sm-8
+          p
+            | In the notifications bar, you’ll have an icon for your application, which will act as a reference point for application notifications and navigation. This view is always shown while communicator is open and provides users a heads-up view of items that require their action and a point to navigate to different applications.
+        .col-sm-4
+          img.doc-image(src="assets/images/image08.png")

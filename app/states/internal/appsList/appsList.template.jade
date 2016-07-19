@@ -1,7 +1,9 @@
 h1 Hub AppsList for {{storage.email}}
 .row
-    .col-sm-offset-2.col-sm-12(ng-repeat="app in userApps")
+    .appContainer(ng-repeat="app in userApps")
+      .col-sm-offset-2.col-sm-8
       h3.appContainer {{app.name}}
+      .col-sm-2
       button.btn.btn-primary.appContainer(ui-sref="internal.editApp({appName:app.name})") Edit
       button.btn.btn-primary.appContainer(ng-click="deleteApp(app.name)") Delete
 .row

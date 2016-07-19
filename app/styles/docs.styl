@@ -1,0 +1,457 @@
+@font-face
+  font-family "CiscoSans TT Regular"
+  src url(../assets/fonts/CiscoSansRegular.otf)
+  font-weight 400
+  font-style normal
+
+@font-face
+  font-family "CiscoSans TT Bold"
+  src url(../assets/fonts/CiscoSansBold.otf)
+  font-weight 400
+  font-style normal
+
+@font-face
+  font-family "CiscoSans TT Extra Light"
+  src url(../assets/fonts/CiscoSansExtraLight.otf)
+  font-weight 400
+  font-style normal
+
+@font-face
+  font-family "CiscoSans TT Thin"
+  src url(../assets/fonts/CiscoSansTTThin.ttf)
+  font-weight 400
+  font-style normal
+
+@font-face
+  font-family "CiscoSans TT Light"
+  src url(../assets/fonts/CiscoSansTTLight.ttf)
+  font-weight 400
+  font-style normal
+
+@font-face
+  font-family "Source Code Pro Regular"
+  src url(../assets/fonts/SourceCodePro-Regular.otf)
+  font-weight 400
+  font-style normal
+
+@font-face
+  font-family "Source Code Pro Semibold"
+  src url(../assets/fonts/SourceCodePro-Semibold.otf)
+  font-weight 400
+  font-style normal
+
+@font-face
+  font-family "Source Code Pro Bold"
+  src url(../assets/fonts/SourceCodePro-Bold.otf)
+  font-weight 400
+  font-style normal
+
+#sidebar
+  display none
+  background #fff
+  min-height 100%
+  h4
+    color #39393b
+    font-family "CiscoSans TT Regular"
+    padding 1.125em 1.25em 0 0
+    margin-top 0
+    text-transform uppercase
+    font-size 16px
+  ul
+    margin 0
+    padding 0
+    list-style none
+    li
+      position relative
+      span
+        &.arrow
+          display none
+          float right
+          position relative
+          top .325em
+          cursor pointer
+          color #099ad7
+          font-size .7em
+      &:hover
+        span
+          &.arrow
+            display block
+      .submenu
+        display none
+        ul
+          border-left 1px solid #e3e3e3
+          padding-left 1.5em
+          li
+            a
+              font-size .9rem
+      &.selected
+        & > a
+          color #099ad7
+          font-family "CiscoSans TT Bold"
+        .submenu
+          font-weight 400
+  a
+    margin-bottom .7em
+    font-size 16px
+    &.selected
+      color #099ad7
+      font-family "CiscoSans TT Bold"
+
+@media (min-width:768px)
+  #sidebar
+    display inherit
+
+#sidebar a,
+#sidebar ul li.selected .submenu
+  font-family "CiscoSans TT Light"
+  color #099ad7
+  display block
+
+
+@media (min-width:768px)
+  #sidebar
+    &.docs
+      padding 1.875em .5em
+      width 100%
+.main-content-row
+  border-left 1px solid #e3e3e3
+  border-left-width 1px
+  border-left-style solid
+  border-left-color rgb(227, 227, 227)
+  max-width 1000px
+  padding-left 30px
+.side-menu
+  padding-left 30px
+section
+  &.main-content
+    padding-top 2.25em
+    padding-bottom 9.375em
+    h1
+      margin-top 0
+      font-size 38px
+      color #39393b
+      font-family "CiscoSans TT Extra Light"
+    h2
+      font-size 30px
+      color #39393b
+      font-family "CiscoSans TT Regular"
+    a
+      font-size 16px
+      color #099ad7
+      font-family "CiscoSans TT Light"
+      &.btn-primary
+        font-size 16px
+        color #fff
+        font-family "CiscoSans TT Bold"
+    .code-window
+      display inline-block
+      width auto
+      background #58585b
+      border-radius .375em
+      border 1px solid #58585b
+      padding-left 1em
+      padding-right .625em
+      font-size .875rem
+      line-height 1.25rem
+      font-family "Source Code Pro Regular"
+      margin-bottom 1em
+      margin-top 1.625em
+      color #fff
+      button
+        float right
+        position relative
+        top .6em
+        margin-left 1em
+        border-radius .3125em
+        padding-left .7em
+        padding-right .7em
+        font-size 16px
+        color #fff
+        font-family "CiscoSans TT Bold"
+        span
+          margin-left .5em
+          font-size .7em
+    .code-box
+      width 42em
+      max-width 100%
+      height auto
+      min-height 4em
+      margin-top -.25em
+    .token-box
+      display inline-block
+      width 42em
+      max-width 100%
+      height 2.1875em
+      border-radius .375em
+      border 1px solid #8bd4ca
+      overflow hidden
+      input
+        width 85%
+        cursor text
+        height 100%
+        line-height 2.1875em
+        padding .25em .5em
+        font-size .8125rem
+        font-family "CiscoSans TT Bold"
+        color #9e9ea2
+        border none
+        border-radius 0
+      button
+        height 100%
+        line-height 100%
+        width 15%
+        float right
+        border-radius 0
+        font-size .8125rem
+        color #fff
+        font-family "CiscoSans TT Bold"
+        border none
+    .confirmation-box
+      display block
+      position relative
+      width 35em
+      max-width 100%
+      border-radius .375em
+      border 1px solid #e3e3e3
+      font-size 16px
+      color #9e9ea2
+      font-family "CiscoSans TT Regular"
+      margin-top 1.25em
+      overflow hidden
+      padding 1.25em 1.25em 1.25em 4em
+      .icon
+        position absolute
+        z-index 2
+        top 0
+        left 0
+        bottom 0
+        padding 1.25em 1em
+        color #fff
+      &.success
+        border-color #43a942
+        div
+          &.icon
+            background #43a942
+      &.warning
+        border-color #f96452
+        .icon
+          background #f96452
+    .confirmation-box#loginwarning
+      display none
+    .api-detail
+      max-width 100%
+      line-height 2.5em
+      border-radius .375em
+      position relative
+      background #1b1d1e
+      margin-top 1.25em
+      .api-method
+        display block
+        float left
+        max-width 5.4em
+        height 100%
+        color #fff
+        font-size .8125rem
+        font-family "CiscoSans TT Regular"
+        text-transform uppercase
+        padding 0 1em
+        margin-right 1em
+        border-top-left-radius .375em
+        border-bottom-left-radius .375em
+        span
+          position relative
+          top 1px
+        &.multiline
+          border-bottom-left-radius 0
+          border-bottom-right-radius .375em
+      .api-url
+        display block
+        font-size .875rem
+        color #fff
+        font-family "Source Code Pro Regular"
+        padding 0
+        input
+          display inline
+          background 0 0
+          color #fff
+          border none
+          width auto
+          outline 0
+    .api-table
+      width 100%
+      margin-top 1.25em
+      border-collapse collapse
+      table-layout fixed
+      thead
+        height 2.25em
+        background #f2f2f2
+        th
+          font-size 16px
+          color #39393b
+          font-family "CiscoSans TT Regular"
+          overflow hidden
+          white-space nowrap
+          text-overflow ellipsis
+      tbody
+        tr
+          color #000
+          border none
+          td
+            font-size 16px
+            line-height 1.25rem
+            font-family "CiscoSans TT Light"
+            border none
+            height 3em
+            vertical-align top
+            .method
+              font-family "CiscoSans TT Regular"
+              min-width 2.5em
+              height 1.3em
+              line-height 1.2em
+              text-transform uppercase
+              padding .3125em
+              border-radius 4px
+              font-size .95em
+            .code
+              font-size .8125rem
+              font-family "Source Code Pro Regular"
+              word-wrap break-word
+            input
+              width 80%
+              margin-right 1em
+            .info
+              border 1px solid #354359
+              border-radius 20px
+              padding 0 6px
+              width 22px
+              font-family "Source Code Pro Regular"
+              font-size .8rem
+              cursor default
+            &.required
+              color #8bd4ca
+      &.white
+        thead
+          background #fff
+      &.striped
+        tbody
+          tr
+            td
+              border-top 1px solid #e9e9e9
+              border-bottom 1px solid #e9e9e9
+      &.hover
+        tbody
+          tr
+            &:hover
+              background #e8ebf1
+              color #099ad7
+              cursor pointer
+
+section.main-content h3,
+section.main-content h4
+  margin-top 1.625em
+  font-size 20px
+  color #39393b
+  font-family "CiscoSans TT Regular"
+
+section.main-content li,
+section.main-content p
+  margin-top 0
+  font-size 16px
+  line-height 1.5
+  color #39393b
+  font-family "CiscoSans TT Light"
+  text-align justify
+  padding-right 15px
+  padding-left 15px
+
+@media (max-width:700px)
+  section
+    &.main-content
+      .code-window
+        font-size 2.6vw
+
+@media (max-width:540px)
+  section
+    &.main-content
+      .code-window
+        margin-bottom 2.4em
+      .token-box
+        button
+          & > span
+            position relative
+            left -10px
+
+@media all and (-ms-high-contrast:none),
+(-ms-high-contrast:active)
+  section
+    &.main-content
+      .token-box
+        button
+          line-height 200%
+      .confirmation-box
+        .text
+          position relative
+          top 3px
+
+@media (max-width:767px)
+  section
+    &.main-content
+      .api-detail
+        .api-url
+          .api-url-text
+            font-size 2.4vw
+
+@media (max-width:767px)
+  section
+    &.main-content
+      .api-table
+        tbody
+          tr
+            td
+              font-size 80%
+              height 6em
+              &:first-of-type
+                vertical-align top
+
+@media all and (-ms-high-contrast:none),
+(-ms-high-contrast:active)
+  section
+    &.main-content
+      .api-detail
+        .api-method
+          span
+            top 3px
+      .api-table
+        tbody
+          tr
+            td
+              .method
+                padding-bottom 0
+
+@media (max-width:991px)
+  section
+    &.main-content
+      .api-table
+        tbody
+          tr
+            td
+              .method
+                font-size .8em
+              &.required
+                text-align right
+
+@media (max-width:767px)
+  section
+    &.main-content
+      .api-table
+        tbody
+          tr
+            td
+              .method
+                padding-left .3em
+                padding-right .3em
+                font-size .6em
+.doc-image
+  display block
+  width 100%
+  padding-bottom 20px
