@@ -28,7 +28,8 @@
     "angular-validation": "^1.4.1",
     "ngstorage": "^0.3.10",
     "angular-cookies": "^1.5.7",
-    "angular-bootstrap-colorpicker": "^3.0.25"
+    "angular-bootstrap-colorpicker": "^3.0.25",
+    "angular-base64-upload": "^0.1.19"
   },
   "resolutions": {
     "angular": "1.5.7"

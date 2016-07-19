@@ -49,19 +49,19 @@ form(name="Form")
   div(class="form-group")
     label(for="register-sub-category")
       | Sub Category
-    input#register-sub-category(ng-model="registeredApp.subTagLabel", class="form-control", max-length="10" validator="required")
+    input#register-sub-category(ng-model="registeredApp.subTagLabel", class="form-control", max-length="10")
       
   div(class="form-group")
     label(for="register-icon-font")
-      | Icon Font
-    input#register-icon-font(ng-model="registeredApp.iconFont", class="form-control" validator="required")
+      | Upload an svg file for your icon
+    //input#register-icon-font(ng-model="registeredApp.iconFont", class="form-control")
+    input#register-icon-font(type="file" ng-model="registeredApp.iconFont" base-sixty-four-input)
 
   div(class="form-group")
     label(for="register-icon-color")
       | Icon Color
     //input#register-icon-color(ng-model="registeredApp.color", class="form-control")
-    input(class="form-control" colorpicker="hex" type="text" ng-model="registeredApp.color")
-
+    input#register-icon-color(class="form-control" colorpicker="hex" type="text" ng-model="registeredApp.color")
 
   div(class="form-group")
     label

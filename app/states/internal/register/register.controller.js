@@ -13,7 +13,11 @@
   angular.module('hubDeveloperPortal').controller('registerCtrl', function ($location, $http, $scope, $rootScope, $state, constants, $sessionStorage, cookies) {
     console.log("constants", constants.data.hubUrl);
     $scope.registeredApp = {};
-    $scope.registerApplication = function () {
+    $scope.registerApplication = function(){
+      console.log($scope.registeredApp);
+      $scope.registeredApp.svgIcon = $scope.registeredApp.iconFont.base64;
+      delete $scope.registeredApp.iconFont;
+      console.log($scope.registeredApp);
       var credsString = '?id=' + cookies.get('email') + '&xsp=' + cookies.get('xsp') + '&pwd=' + cookies.get('password');
       $http.post(constants.data.hubUrl + '/createRegisteredApp' + credsString, $scope.registeredApp).then(function (createdApp) {
         console.log("Your application was created,", createdApp);
