@@ -30,16 +30,16 @@ h1 Hub Sandbox
   .contextual
     .iframe-container
       h2 Contextual
-      iframe.contextual-iframe(ng-src="{{contextual}}")
+      iframe#contextual-iframe.contextual-iframe(ng-src="{{contextual}}")
     .actions
       h3 Other User Details
       p This is where you can test the user details in certain scenarios. Clicking the "Request Contextual Data button will cause Hub to send your application a request for contextual data.
       .label
         | Email:
       .form-value
-        input(type="text")
+        input(type="text" ng-model="email")
       .label
         | Phone Number:
       .form-value
-        input(type="text")
-      button.btn.btn-primary Request Contextual Data
+        input(type="text" ng-model="phoneNumber")
+      button.btn.btn-primary(ng-click="getContextualUser()") Request Contextual Data
