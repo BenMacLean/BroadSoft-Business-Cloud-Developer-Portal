@@ -28,6 +28,7 @@ var jsFilesToInject = [
   "bower_components/angular-validation/dist/angular-validation.js",
   "bower_components/angular-validation/dist/angular-validation-rule.js",
   "bower_components/underscore/underscore-min.js",
+  "bower_components/angular-bootstrap-colorpicker/js/bootstrap-colorpicker-module.js",
 
   // All of the rest of your client-side js files
   // will be injected here in no particular order.

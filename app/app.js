@@ -2,7 +2,7 @@
   'use strict';
 
   angular.module('hubDeveloperPortal', [
-    'ngRoute', 'ui.router', 'validation', 'validation.rule', 'ngStorage','ngCookies'
+    'ngRoute', 'ui.router', 'validation', 'validation.rule', 'ngStorage','ngCookies', 'colorpicker.module'
   ]).config(['$validationProvider', function($validationProvider) {
     var defaultMsg;
     defaultMsg = {
