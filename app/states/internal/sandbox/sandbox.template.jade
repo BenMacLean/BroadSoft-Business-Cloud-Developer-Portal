@@ -16,6 +16,25 @@ h1 Hub Sandbox
     .actions
       p This is where you can test your notifications.
     button.btn.btn-primary(ng-click="requestNotifications(); notificationsSent = true") Request Count
+    h2 Push Notification
+    .actions
+      p Whenever this route is called, Hub will attempt to call your application for notifications and contextual data and update the user interface with that new data.
+      code
+        | POST https://core.broadsoftlabs.com/v1/:app/:username/push
+      p
+      .label
+        | User (the email used for the app authentication):
+      .form-value
+        input(type="text" ng-model="username" )
+      .label
+        | Application:
+      .form-value
+        input(type="text" ng-model="app" )
+      .label
+        | Data to send:
+      .form-value
+        textarea(ng-model="appdata" cols="45")
+      button.btn.btn-primary(ng-click="pushNotification()") Request Push Notification      
 
   .api(ng-show="notificationsSent")
     h3 What we sent you:
