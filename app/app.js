@@ -16,7 +16,14 @@
       }
     };
     $validationProvider.setDefaultMsg(defaultMsg);
-  }]);
+  }]).run(function($rootScope, $location, $anchorScroll) {
+  //when the route is changed scroll to the proper element.
+    $rootScope.$on('$routeChangeSuccess', function(newRoute, oldRoute) {
+      if($location.hash()){
+        $anchorScroll();  
+      }
+    });
+  });
 
   angular.module('hubDeveloperPortal').config(function ($urlRouterProvider) {
     $urlRouterProvider.otherwise('/login');
