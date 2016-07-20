@@ -32,6 +32,8 @@
       var base64Image = $scope.registeredApp.iconFont.base64;
       $scope.registeredApp.svgIcon = base64Image;
       $scope.registeredApp.iconFont = base64Image;
+      $scope.registeredApp.version = 2;
+      $scope.registeredApp.apiVersion = 1;
 
       var credsString = '?id=' + cookies.get('email') + '&xsp=' + cookies.get('xsp') + '&pwd=' + cookies.get('password');
       $http.post(constants.data.hubUrl + '/createRegisteredApp' + credsString, $scope.registeredApp).then(function (createdApp) {
