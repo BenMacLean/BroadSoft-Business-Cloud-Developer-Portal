@@ -43,3 +43,14 @@ h1 Hub Sandbox
       .form-value
         input(type="text" ng-model="phoneNumber")
       button.btn.btn-primary(ng-click="getContextualUser()") Request Contextual Data
+
+  .pushnotifications
+    .iframe-container
+      h2 Push Notification
+    .actions
+      p Whenever this route is called, Hub will attempt to call your application for notifications and contextual data and update the user interface with that new data.
+      button.btn.btn-primary(ng-click="pushNotification()") Request Push Notification
+    .api(ng-show="pushNotificationRequested")
+      h3 Please send us the following POST request
+      code
+        | POST https://core.broadsoftlabs.com/v1/:app/:username/push

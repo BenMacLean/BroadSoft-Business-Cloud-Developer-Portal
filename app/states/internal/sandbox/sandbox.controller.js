@@ -16,6 +16,7 @@
 
     $scope.email = 'jodonnell@broadsoft.com';
     $scope.phoneNumber = '15554443333';
+    $scope.pushNotificationRequested = false;
 
     var baseUrl = constants.data.hubUrl;
 
@@ -63,7 +64,9 @@
     $scope.requestNotifications = function(){
 
     };
-
+    $scope.pushNotification = function(){
+      $scope.pushNotificationRequested = !$scope.pushNotificationRequested;
+    }
     $scope.getContextualUser = function(){
       // var email = $scope.email;
       // var phoneNumber = $scope.phoneNumber;
