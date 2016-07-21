@@ -3,7 +3,10 @@
 
   angular.module('hubDeveloperPortal').directive('customHeader', function() {
     return {
-      templateUrl: '/directives/customHeader.template.html'
+      templateUrl: '/directives/customHeader.template.html',
+      scope: {
+        internal: '=internal'
+      }
     };
   });
 })();
