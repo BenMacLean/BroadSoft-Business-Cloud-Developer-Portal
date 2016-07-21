@@ -16,6 +16,12 @@
 
     $scope.email = 'jodonnell@broadsoft.com';
     $scope.phoneNumber = '15554443333';
+    $scope.pushNotificationRequested = false;
+
+    $scope.username = 'jodonnell@broadsoft.com';
+    $scope.app = 'gMail';
+    $scope.appdata = '{"emailAddress": "'+$scope.username+'"}';
+
 
     var baseUrl = constants.data.hubUrl;
 
@@ -63,7 +69,29 @@
     $scope.requestNotifications = function(){
 
     };
+    $scope.pushNotification = function(){
 
+      // This case is tailored for a gMail push notifications
+      // It won't work with any other application
+      var dataToEncode = $scope.appdata;
+
+      // gMail push notifications comes in base64 encoding
+      dataToEncode = window.btoa(dataToEncode);
+      var data = {
+         message:{
+           data: dataToEncode,
+         }
+      };
+
+      if($scope.app && $scope.username && dataToEncode){
+        var url = baseUrl.toString() + "/v1/"+$scope.app+"/"+$scope.username+"/push";
+        $http({
+          method: 'POST',
+          url: url,
+          data: data
+        });
+      }
+    }
     $scope.getContextualUser = function(){
       // var email = $scope.email;
       // var phoneNumber = $scope.phoneNumber;
