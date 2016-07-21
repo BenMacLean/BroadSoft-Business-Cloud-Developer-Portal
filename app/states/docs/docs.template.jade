@@ -7,7 +7,7 @@ custom-header(internal="$root.internal")
         a(href="#/docs") Notifications
         a(href="#/docs") Contextual
         a(href="#/docs") MicroApp
-        a(href="#/docs") BroadSearch
+        a(href="#/docs#settings") BroadSearch
         a(ng-click="jumpToLocation('settings')") Settings
         h4 Best Practices
         a(href="#/docs") Approved Frameworks
@@ -111,8 +111,7 @@ custom-header(internal="$root.internal")
             | In contextual, if you search the while in the “All” tab, you will search all applications at once. As you filter the contextual view to categories or subcategories, you then start to limit the scope of the BroadSearch feature to the desired applications.
         .col-sm-1
 
-        .col-sm-12.new-sub-section
-          a(id="settings")
+        .col-sm-12.new-sub-section(id="settings")
           h2 1.6 Settings
         .col-sm-8
           p
