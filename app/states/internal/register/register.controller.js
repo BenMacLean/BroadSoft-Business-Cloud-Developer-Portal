@@ -15,9 +15,9 @@
 
     //Test Data to be removed
     $scope.registeredApp = {
-      iframeUrl: 'http://www.google.com',
+      iframeUrl: 'http://localhost:5430',
       appAdminEmail: 'joncodo@gmail.com',
-      name: 'TestApp' + Math.floor(Math.random() * (10000)),
+      name: 'TriviaApp-' + Math.floor(Math.random() * (10000)),
       title: 'TestApp',
       applicationType: 'all',
       tags: ['files'],
@@ -25,7 +25,6 @@
       isPublic: false
     };
     //^^ Test Data to be removed
-
 
     $scope.registerApplication = function(){
       //Set the values the user did not set
