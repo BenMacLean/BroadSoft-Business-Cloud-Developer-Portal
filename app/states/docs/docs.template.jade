@@ -8,7 +8,7 @@ custom-header
         a(href="#/docs") Contextual
         a(href="#/docs") MicroApp
         a(href="#/docs") BroadSearch
-        a(href="#/docs#settings") Settings
+        a(ng-click="jumpToLocation('settings')") Settings
         h4 Best Practices
         a(href="#/docs") Approved Frameworks
         a(href="#/docs") Performance
@@ -112,6 +112,7 @@ custom-header
         .col-sm-1
 
         .col-sm-12.new-sub-section
+          a(id="settings")
           h2 1.6 Settings
         .col-sm-8
           p
@@ -783,7 +784,7 @@ custom-header
             | https://<baseUrl>/v1/:app/:username/timeline/:timelineId/:property
           p
             | With the toggled value of the property in the body of the request. 
-
+        .col-sm-1
         .col-sm-12.new-sub-section
           h2 4.4 Push notifications update of Hub Contextual and Notifications
         .col-sm-11
@@ -813,170 +814,169 @@ custom-header
             p
               | In the case where you are not sure how to host an application on the internet, you can follow the following steps as a guide.
           .col-sm-1
+        .col-sm-1
           
-          
-          .col-sm-12.new-sub-section
-            h4.plistHeading Heroku
-          .col-sm-11
-            a.plistHeading(href="https://devcenter.heroku.com/start") https://devcenter.heroku.com/start
-            p
-              | Download the heroku toolbelt here: 
-            a.plistHeading(href="https://devcenter.heroku.com/articles/getting-started-with-nodejs#set-up") https://devcenter.heroku.com/articles/getting-started-with-nodejs#set-up
-            p
-              | In terminal write: 
-            p.plist.code
-              | Mkdir hostingTester
-            p.plist.code
-              | Cd hostingTester
-            p.plist.code
-              | git init
-            p.plist.code
-              | vi index.html
-            p.plist.code
-              | Npm init
-            p.plist.code
-              | git add .
-            p.plist.code
-              | git commit -am 'my first commit'
-            p.plist.code
-              | heroku create
-            p.plist.code
-              | git push heroku master
-            p
-              |Then follow the links in the heroku output to see your application hosted online. For more details please visit
-              a(href="http://heroku.com") &nbsp; heroku.com.
+        .col-sm-12.new-sub-section
+          h4.plistHeading Heroku
+        .col-sm-11
+          a.plistHeading(href="https://devcenter.heroku.com/start") https://devcenter.heroku.com/start
+          p
+            | Download the heroku toolbelt here: 
+          a.plistHeading(href="https://devcenter.heroku.com/articles/getting-started-with-nodejs#set-up") https://devcenter.heroku.com/articles/getting-started-with-nodejs#set-up
+          p
+            | In terminal write: 
+          p.plist.code
+            | Mkdir hostingTester
+          p.plist.code
+            | Cd hostingTester
+          p.plist.code
+            | git init
+          p.plist.code
+            | vi index.html
+          p.plist.code
+            | Npm init
+          p.plist.code
+            | git add .
+          p.plist.code
+            | git commit -am 'my first commit'
+          p.plist.code
+            | heroku create
+          p.plist.code
+            | git push heroku master
+          p
+            |Then follow the links in the heroku output to see your application hosted online. For more details please visit
+            a(href="http://heroku.com") &nbsp; heroku.com.
+        .col-sm-1
 
-          .col-sm-1
-
-          .col-sm-12.new-sub-section
-            h2 5.3 App Registration
-          .col-sm-11
-            p
-              | Once you are pleased with your application and it has been fully tested, you can register your application with Broadsoft Labs as previously described. The Hub team will review your application and then enable your application on our Hub staging servers where you can fully test the integrated solution.
-          .col-sm-1
+        .col-sm-12.new-sub-section
+          h2 5.3 App Registration
+        .col-sm-11
+          p
+            | Once you are pleased with your application and it has been fully tested, you can register your application with Broadsoft Labs as previously described. The Hub team will review your application and then enable your application on our Hub staging servers where you can fully test the integrated solution.
+        .col-sm-1
+        
+        .col-sm-12.new-sub-section
+          h2 5.4 Test On Staging
+        .col-sm-11
+          p
+            | You should be testing your application on staging to be sure that notifications and contextual work as intended. During this process, you will be communicating with the Hub team to ensure that your application is working as intended.
+        .col-sm-1
+        
+        
+        .col-sm-12.new-sub-section
+          h2 5.5 The Hub Team Will Test Your Application
+        .col-sm-11
+          p
+            | We will be looking for bugs, UI defects, UI general styling and security vulnerabilities. If your application fails any of these steps, you will be contacted by a Hub team member to aid you in fixing these issues before the application can be enabled on production.
+        .col-sm-1
+        
+        .col-sm-12.new-sub-section
+          h2 5.6 Schedule a Production Release Date
+        .col-sm-11
+          p
+            | You will work with the Hub team to set a reasonable production release date.
+        .col-sm-1
+        
+        .col-sm-12.new-section
+          h1 6.0 Hub Developer Portal (Coming Soon)
+        .col-sm-11
+          p
+            | In this tool, you will be able to fully test your application while only needing your own local code to do so. Here you will register applications and schedule releases for your product. This is also where you will receive feedback during the review process.
+        .col-sm-1
+        
+        .col-sm-12.new-section
+          h1 7.0 Sample Application Guide and Troubleshooting
+        
+        .col-sm-12.new-sub-section
+          h2 7.1 Developing The Hello World Application Locally
+        .col-sm-11
+          p
+            | The source code for the Hello World app can be downloaded here:
+          a.plistHeading(href="https://github.com/BroadsoftLabs/helloWorldSampleApp") https://github.com/BroadsoftLabs/helloWorldSampleApp
+          p
+            | The following are instructions for Mac. In some cases you will have to find the instructions for Windows for installing certain packages. All of our development will be done with unix terminal commands.
+          strong.plistHeading.plist
+            | Step 1: Install the Required Dependencies
+          p.plist
+            | Firstly, you will need to install git. Please follow this guide: 
+          a.plistHeading(href="https://git-scm.com/book/en/v2/Getting-Started-Installing-Git") https://git-scm.com/book/en/v2/Getting-Started-Installing-Git
+          p.plist
+            | Then install node:
+          a.plistHeading(href="https://nodejs.org/en/download/") https://nodejs.org/en/download
+          p
+            | The node version compatible with this project is 6.2.2 or later but earlier versions may also work.
+          strong.plistHeading.plist
+            | Step 2: Set up the project
+          p.plist
+            | Run this in terminal:
+          p.plist.code
+            | git clone https://github.com/BroadsoftLabs/triviaSampleApp.git
+          p.plist.code
+            | cd helloWorldSampleApp
+          p.plist.code
+            | npm i
+          p.plist.code
+            | bower i
+          p.code
+            | sails lift --verbose 
+          p
+            |Your app should now be running in your browser at http://localhost:5430/#/   
+        .col-sm-1
+        
+        .col-sm-12.new-sub-section
+          h2 7.2 Testing Your Application (Coming Soon)
+        .col-sm-11
+          strong.plist.plistHeading
+            | Step 1: Register in the hub Developer Portal
+          p
+            | NOTE: If you would like to see to see the communicator application for design and demo purposes, it can be Installed here: 
+          a.plist.plistHeading(href="https://chrome.google.com/webstore/detail/communicator/ggbjagbpfbiannaconhiblndomfmekkh?hl=en-US&utm_source=chrome-ntp-launcher&authuser=1") https://chrome.google.com/webstore/detail/communicator/ggbjagbpfbiannaconhiblndomfmekkh?hl=en-US&utm_source=chrome-ntp-launcher&authuser=1
+          p
+            | 
+          strong.plist.plistHeading
+            | Step 2: Create BroadsoftLabs Account
+          p
+            | Sign up for an account at broadsoftlabs.com. NOTE: You will need a corporate email address from Broadsoft.com or a Broadsoft partner in order to go any further.
+          strong.plist.plistHeading
+            | Step 3: Register a Sample Application 
+          p
+            | Register a sample application in the portal and your DMS config settings for your broadsoftlabs account will automatically be updated.
+          strong.plist.plistHeading
+            | Step 4: Host your Application
+          p
+            | When you register your application, be sure to set the url to your hosted location.
           
-          .col-sm-12.new-sub-section
-            h2 5.4 Test On Staging
-          .col-sm-11
-            p
-              | You should be testing your application on staging to be sure that notifications and contextual work as intended. During this process, you will be communicating with the Hub team to ensure that your application is working as intended.
-          .col-sm-1
+          strong.plist.plistHeading
+            | Step 5: Verify your Code in the Sandbox
+          p
+            | Test your code in the micro apps and notifications
           
-          
-          .col-sm-12.new-sub-section
-            h2 5.5 The Hub Team Will Test Your Application
-          .col-sm-11
-            p
-              | We will be looking for bugs, UI defects, UI general styling and security vulnerabilities. If your application fails any of these steps, you will be contacted by a Hub team member to aid you in fixing these issues before the application can be enabled on production.
-          .col-sm-1
-          
-          .col-sm-12.new-sub-section
-            h2 5.6 Schedule a Production Release Date
-          .col-sm-11
-            p
-              | You will work with the Hub team to set a reasonable production release date.
-          .col-sm-1
-          
-          .col-sm-12.new-section
-            h1 6.0 Hub Developer Portal (Coming Soon)
-          .col-sm-11
-            p
-              | In this tool, you will be able to fully test your application while only needing your own local code to do so. Here you will register applications and schedule releases for your product. This is also where you will receive feedback during the review process.
-          .col-sm-1
-          
-          .col-sm-12.new-section
-            h1 7.0 Sample Application Guide and Troubleshooting
-          
-          .col-sm-12.new-sub-section
-            h2 7.1 Developing The Hello World Application Locally
-          .col-sm-11
-            p
-              | The source code for the Hello World app can be downloaded here:
-            a.plistHeading(href="https://github.com/BroadsoftLabs/helloWorldSampleApp") https://github.com/BroadsoftLabs/helloWorldSampleApp
-            p
-              | The following are instructions for Mac. In some cases you will have to find the instructions for Windows for installing certain packages. All of our development will be done with unix terminal commands.
-            strong.plistHeading.plist
-              | Step 1: Install the Required Dependencies
-            p.plist
-              | Firstly, you will need to install git. Please follow this guide: 
-            a.plistHeading(href="https://git-scm.com/book/en/v2/Getting-Started-Installing-Git") https://git-scm.com/book/en/v2/Getting-Started-Installing-Git
-            p.plist
-              | Then install node:
-            a.plistHeading(href="https://nodejs.org/en/download/") https://nodejs.org/en/download
-            p
-              | The node version compatible with this project is 6.2.2 or later but earlier versions may also work.
-            strong.plistHeading.plist
-              | Step 2: Set up the project
-            p.plist
-              | Run this in terminal:
-            p.plist.code
-              | git clone https://github.com/BroadsoftLabs/triviaSampleApp.git
-            p.plist.code
-              | cd helloWorldSampleApp
-            p.plist.code
-              | npm i
-            p.plist.code
-              | bower i
-            p.code
-              | sails lift --verbose 
-            p
-              |Your app should now be running in your browser at http://localhost:5430/#/   
-          .col-sm-1
-          
-          .col-sm-12.new-sub-section
-            h2 7.2 Testing Your Application (Coming Soon)
-          .col-sm-11
-            strong.plist.plistHeading
-              | Step 1: Register in the hub Developer Portal
-            p
-              | NOTE: If you would like to see to see the communicator application for design and demo purposes, it can be Installed here: 
-            a.plist.plistHeading(href="https://chrome.google.com/webstore/detail/communicator/ggbjagbpfbiannaconhiblndomfmekkh?hl=en-US&utm_source=chrome-ntp-launcher&authuser=1") https://chrome.google.com/webstore/detail/communicator/ggbjagbpfbiannaconhiblndomfmekkh?hl=en-US&utm_source=chrome-ntp-launcher&authuser=1
-            p
-              | 
-            strong.plist.plistHeading
-              | Step 2: Create BroadsoftLabs Account
-            p
-              | Sign up for an account at broadsoftlabs.com. NOTE: You will need a corporate email address from Broadsoft.com or a Broadsoft partner in order to go any further.
-            strong.plist.plistHeading
-              | Step 3: Register a Sample Application 
-            p
-              | Register a sample application in the portal and your DMS config settings for your broadsoftlabs account will automatically be updated.
-            strong.plist.plistHeading
-              | Step 4: Host your Application
-            p
-              | When you register your application, be sure to set the url to your hosted location.
+          strong.plist.plistHeading
+            | Step 6: Verify Contextual
+          p
+            | Test your app in contextual with another user by creating a custom contact
+        .col-sm-1
             
-            strong.plist.plistHeading
-              | Step 5: Verify your Code in the Sandbox
-            p
-              | Test your code in the micro apps and notifications
-            
-            strong.plist.plistHeading
-              | Step 6: Verify Contextual
-            p
-              | Test your app in contextual with another user by creating a custom contact
-          .col-sm-1
-              
-          .col-sm-12.new-sub-section
-            h2 7.3 How Does the Trivia App Work?
-          .col-sm-11
-            p
-              | The technologies used for this application can be found in the package.json file for the app. 
-              a(href="https://github.com/BroadsoftLabs/triviaSampleApp/blob/master/package.json") https://github.com/BroadsoftLabs/triviaSampleApp/blob/master/package.json
-            p
-              | The main technology is SailsJS, a wrapper for express. 
-              a(href="http://sailsjs.org/") http://sailsjs.org/
-            p
-              | The application that you write can be in any technology as long as you can make REST requests to the Hub Core server.
-            p
-              | In this application all the rest routes are defined here:
-            a.plistHeading(href="https://github.com/BroadsoftLabs/triviaSampleApp/blob/master/config/routes.js") https://github.com/BroadsoftLabs/triviaSampleApp/blob/master/config/routes.js
-            p
-              | This is where the backend interacts with the Hub API
-            p
-              | Custom authentication to Hub can be viewed here: 
-            a.plistHeading(href="https://github.com/BroadsoftLabs/triviaSampleApp/blob/master/api/controllers/OAuthController.js") https://github.com/BroadsoftLabs/triviaSampleApp/blob/master/api/controllers/OAuthController.js
-            p
-              | Hub Core will also query your application with the timeline route for contextual data and the notifications route for the notifications count. 
-            a.plistHeading(href="https://github.com/BroadsoftLabs/triviaSampleApp/blob/master/api/controllers/TriviaController.js") https://github.com/BroadsoftLabs/triviaSampleApp/blob/master/api/controllers/TriviaController.js   
-            
+        .col-sm-12.new-sub-section
+          h2 7.3 How Does the Trivia App Work?
+        .col-sm-11
+          p
+            | The technologies used for this application can be found in the package.json file for the app. 
+            a(href="https://github.com/BroadsoftLabs/triviaSampleApp/blob/master/package.json") https://github.com/BroadsoftLabs/triviaSampleApp/blob/master/package.json
+          p
+            | The main technology is SailsJS, a wrapper for express. 
+            a(href="http://sailsjs.org/") http://sailsjs.org/
+          p
+            | The application that you write can be in any technology as long as you can make REST requests to the Hub Core server.
+          p
+            | In this application all the rest routes are defined here:
+          a.plistHeading(href="https://github.com/BroadsoftLabs/triviaSampleApp/blob/master/config/routes.js") https://github.com/BroadsoftLabs/triviaSampleApp/blob/master/config/routes.js
+          p
+            | This is where the backend interacts with the Hub API
+          p
+            | Custom authentication to Hub can be viewed here: 
+          a.plistHeading(href="https://github.com/BroadsoftLabs/triviaSampleApp/blob/master/api/controllers/OAuthController.js") https://github.com/BroadsoftLabs/triviaSampleApp/blob/master/api/controllers/OAuthController.js
+          p
+            | Hub Core will also query your application with the timeline route for contextual data and the notifications route for the notifications count. 
+          a.plistHeading(href="https://github.com/BroadsoftLabs/triviaSampleApp/blob/master/api/controllers/TriviaController.js") https://github.com/BroadsoftLabs/triviaSampleApp/blob/master/api/controllers/TriviaController.js   
+          
