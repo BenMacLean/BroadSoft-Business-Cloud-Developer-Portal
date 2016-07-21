@@ -10,8 +10,8 @@
     });
   });
 
-  angular.module('hubDeveloperPortal').controller('docsCtrl', function ($scope, $rootScope, $http, $state,$sessionStorage, cookies) {
-
+  angular.module('hubDeveloperPortal').controller('docsCtrl', function ($scope, $rootScope, $http, $state,$sessionStorage, cookies,$location,$anchorScroll) {
+    console.log("I am in the docs ctrl");
     $scope.login = function () {
       $sessionStorage.urls = [
         'https://xsp2.broadsoftlabs.com',
@@ -36,7 +36,12 @@
           });
         });
       });
-
+      var jumpToLocation = function(key){
+        console.log("key",key);
+        $location.hash(key);
+        $anchorScroll();
+      };
+      jumpToLocation('settings');
     };
   });
 })();
