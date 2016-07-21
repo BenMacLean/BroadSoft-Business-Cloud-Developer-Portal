@@ -1,11 +1,10 @@
 h1 Hub AppsList for {{storage.email}}
 .row
-    .appContainer(ng-repeat="app in userApps")
-      .col-sm-offset-2.col-sm-8
-      h3.appContainer {{app.name}}
-      .col-sm-2
-      button.btn.btn-primary.appContainer(ui-sref="internal.editApp({appName:app.name})") Edit
-      button.btn.btn-primary.appContainer(ng-click="deleteApp(app.name)") Delete
+  .spinner
+    img(src="http://www.himedialabs.com/HML/img/loader.gif" ng-show="isLoading")
+  .appContainer(ng-repeat="app in userApps")
+    h3 {{app.name}}
+    button.btn.btn-primary.appContainer(ui-sref="internal.editApp({appName:app.name})") Edit
+    button.btn.btn-danger.appContainer(ng-click="deleteApp(app.name)") Delete
 .row
-  .col-sm-offset-2.col-sm-6
-    button.btn.btn-primary.form-control(ui-sref="internal.register") Create 
+  button.btn.btn-success.form-control.create(ui-sref="internal.register" ng-show="!isLoading") Create

@@ -13,8 +13,10 @@
   angular.module('hubDeveloperPortal').controller('appsListCtrl', function ($location, $http, $scope, cookies, $sce, $sessionStorage, constants) {
     console.log('appsList controller');
     $scope.userApps = [];
-
     $scope.user = cookies.get('email');
+    $scope.isLoading = true;
+
+    
     $scope.makeServerRequest = function (path, params) {
       var credsString = '?id=' + cookies.get('email') + '&xsp=' + cookies.get('xsp') + '&pwd=' + cookies.get('password');
       var getRequest = constants.data.hubUrl + path + credsString;
@@ -25,22 +27,20 @@
         return response;
       });
     };
+
     $scope.makeServerRequest('/getUserApps').then(function (userApps) {
+      $scope.isLoading = false;
       $scope.userApps = userApps.data;
     });
 
-
-    $scope.requestNotifications = function () {
-
-    }
     $scope.deleteApp = function (appName) {
       var params='appName='+appName;
       $scope.makeServerRequest('/deleteRegisteredApp', params).then(function (userApps) {
-        // console.log(userApps);
         $scope.removeAppFromList(appName);
       });
 
-    },
+    };
+
     $scope.removeAppFromList = function (appName) {
       $scope.userApps.map(function (userApp,index) {
         if(userApp.name === appName){
