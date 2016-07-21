@@ -1,14 +1,13 @@
-h1 Hub Sandbox
-.iframes-container
+.sandbox-container
   .micro-app
     .iframe-container
-      h2 MicroApp
+      h2 MicroApp Panel
       iframe.micro-app-iframe(ng-src="{{microApps}}")
     .actions
       h3 Let's start by enabling your application from the settings page.
       p What we will send you:
       code
-        | GET http://<yourUrl>/v1/trivia2/authenticate?id=username
+        | GET http://yourUrl/v1/trivia2/authenticate?id=username
       p Then you send us:
       code
         | ResponseCode: 200
@@ -16,11 +15,9 @@ h1 Hub Sandbox
         |    auth: 'your custom auth token'
         | }
 
-      button.btn.btn-primary Reset User Auth
-
   .notifications
     .iframe-container
-      h2 Notifications
+      h2 Notifications Panel
       iframe.notifications-iframe(ng-src="{{notifications}}")
     .actions
       p This is where you can test your notifications.
@@ -57,7 +54,7 @@ h1 Hub Sandbox
 
   .contextual
     .iframe-container
-      h2 Contextual
+      h2 Contextual Panel
       iframe#contextual-iframe.contextual-iframe(ng-src="{{contextual}}")
     .actions
       h3 Other User Details

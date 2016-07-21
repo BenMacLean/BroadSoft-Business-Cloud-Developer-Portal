@@ -1,13 +1,23 @@
 <div class="topNav internal-header">
-  <a href="/#/login">Home</a>
-  <a ui-sref="docs">Docs</a>
-  <a href="https://www.youtube.com/channel/UCooaiKRyfGHF_L5-CJzaDkQ">Video Tutorials</a>
+  <a href="http://www.broadsoft.com/">
+    <img src="http://cdn2.hubspot.net/hubfs/703373/images/header_logo.png" alt="" target="_blank">
+  </a>
+  <span class="right-section">
+    <a class="menu-item"  href="/#/login">Home</a>
+    <a class="menu-item" ui-sref="docs">Docs</a>
+    <a class="menu-item" href="https://www.youtube.com/channel/UCooaiKRyfGHF_L5-CJzaDkQ">Video Tutorials</a>
 
-  <a ng-click="sampleHovered = !sampleHovered" ng-init="sampleHovered = false">Sample Apps</a>
-  <div class="headerDropDown" ng-show="sampleHovered" ng-mouseleave="sampleHovered = false" >
-    <a href="https://github.com/BroadsoftLabs/helloWorldSampleApp">Hello World</a>
-    <a href="https://github.com/BroadsoftLabs/triviaSampleApp">Trivia Sample App</a>
-  </div>
-  <a href="/#/internal/appsList" ng-show="internal">My Apps</a>
-  <a href="/#/internal/sandbox" ng-show="internal">Sandbox</a>
+    <a class="menu-item" ng-click="sampleHovered = !sampleHovered" ng-init="sampleHovered = false">Sample Apps</a>
+    <div class="headerDropDown" ng-show="sampleHovered" ng-mouseleave="sampleHovered = false" >
+      <a href="https://github.com/BroadsoftLabs/helloWorldSampleApp">Hello World</a>
+      <a href="https://github.com/BroadsoftLabs/triviaSampleApp">Trivia Sample App</a>
+    </div>
+    <a class="menu-item" href="/#/internal/appsList" ng-show="internal">My Apps</a>
+    <a class="menu-item" href="/#/internal/sandbox" ng-show="internal">Sandbox</a>
+
+    <div class="login-buttons" ng-show="!internal">
+      <a href="https://broadsoftlabs.com/" target="_blank" class="hub-button signup-button">Sign Up</a>
+    </div>
+  </span>
+
 </div>

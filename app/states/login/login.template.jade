@@ -1,28 +1,19 @@
 .login-container
-  .topNav
-    custom-header(internal="$root.internal")
+  custom-header(internal="$root.internal")
 
-  .my-div-title
-    | Hub Developer Program
-  .my-div
-    .my-div-please-sign-in
-      | Please sign in with your BroadSoftLabs account:
-    .form-item
-      .form-label
-        | Username:
-      .form-value
-        input(type="text" ng-model="email")
-    .form-item
-      .form-label
-        | Password:
-      .form-value
-        input(type="password" ng-model="password")
+  .login-splash.login-half
+    .content
+      h1 Hub Developer Program
 
-  .buttons
-    a.login.btn.btn-primary(href="#" ng-click="login()")
-      | Login
-    a.signup.btn.btn-success(href="https://broadsoftlabs.com/" target="_blank")
-      | Sign Up
-
-  .my-div-account
-      | Don't have a BroadSoftLabs account? Create one for free today!
+  .login-actions.login-half
+    .content
+      .form-item
+        .username.inline-block
+          | Username:
+        input.inline-block(type="text" ng-model="email")
+      .form-item
+        .password.inline-block
+          | Password:
+        input.inline-block(type="password" ng-model="password")
+      a.hub-button.login-button(href="#" ng-click="login()")
+        | Login
