@@ -20,7 +20,8 @@
     $http.get('/util/checkAuth').then(function (response) {
       console.log("response",response);
     },function(err){
-      $state.go('login');
+      //TODO uncomment this for live
+      // $state.go('login');
     });
     return 12;
   });

@@ -2,6 +2,12 @@
   .micro-app
     .iframe-container
       h2 MicroApp Panel
+      //help-modal
+
+
+      img.help(src="/assets/images/help-icon.png" ng-click="open('lg')")
+
+
       iframe.micro-app-iframe(ng-src="{{microApps}}")
     .actions
       h3 Let's start by enabling your application from the settings page.
