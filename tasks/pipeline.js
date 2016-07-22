@@ -13,6 +13,8 @@
 // (if you're using LESS with the built-in default config, you'll want
 //  to change `app/styles/importer.less` instead.)
 var cssFilesToInject = [
+  'bower_components/ng-dialog/css/ngDialog.css',
+  'bower_components/ng-dialog/css/ngDialog-theme-default.css',
   'styles/**/*.css',
   'styles/**/*.styl'
 ];
@@ -30,6 +32,7 @@ var jsFilesToInject = [
   "bower_components/underscore/underscore-min.js",
   "bower_components/angular-bootstrap-colorpicker/js/bootstrap-colorpicker-module.js",
   "bower_components/angular-base64-upload/dist/angular-base64-upload.js",
+  "bower_components/ng-dialog/js/ngDialog.js",
 
   // All of the rest of your client-side js files
   // will be injected here in no particular order.

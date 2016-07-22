@@ -10,7 +10,7 @@
     });
   });
 
-  angular.module('hubDeveloperPortal').controller('sandboxCtrl', function($location, $http, $scope, cookies, $sce, constants) {
+  angular.module('hubDeveloperPortal').controller('sandboxCtrl', function($location, $http, $scope, cookies, $sce, constants, ngDialog) {
     console.log('sandbox controller'); 
     var credsString = 'id=' + cookies.get('email') + '&xsp=' + cookies.get('xsp') + '&pwd=' + cookies.get('password');
 
@@ -104,7 +104,10 @@
       console.error('get contextual');
       $scope.getContextualUser();
     });
-    
+
+    $scope.clickToOpen = function () {
+      ngDialog.open({ template: 'states/internal/sandbox/microApp.help.html', className: 'ngdialog-theme-default' });
+    };
   });
 })();
 
