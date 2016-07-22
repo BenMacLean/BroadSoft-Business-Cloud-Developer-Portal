@@ -3,3 +3,20 @@
   The micro app can be seen as the main portal that the user will see. This is also where the user will navigate to when
   they enable your application in the settings view.
 </p>
+
+<div class="actions">
+  <h3>Let's start by enabling your application from the settings page.</h3>
+  <p>What we will send you:</p>
+  <code>
+    GET http://yourUrl/v1/yourAppName/authenticate?id=username
+  </code>
+  <p>
+    Then you send us:
+  </p>
+  <code>
+    ResponseCode: 200
+    {
+    auth: 'your custom auth token'
+    }
+  </code>
+</div>
