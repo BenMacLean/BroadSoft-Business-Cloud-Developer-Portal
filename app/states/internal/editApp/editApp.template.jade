@@ -17,11 +17,6 @@
       input#register-application-name(ng-model="registeredApp.name", class="form-control" validator="required")
 
     div(class="form-group")
-      label(for="register-application-title")
-        | Application Title
-      input#register-application-title(ng-model="registeredApp.title", class="form-control" validator="required")
-
-    div(class="form-group")
       label(for="register-application-type")
         | Application Type
       select#register-application-type(ng-model="registeredApp.applicationType", class="form-control", validator="required")

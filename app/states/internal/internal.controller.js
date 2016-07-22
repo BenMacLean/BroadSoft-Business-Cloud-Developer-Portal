@@ -21,7 +21,7 @@
       console.log("response",response);
     },function(err){
       //TODO uncomment this for live
-      // $state.go('login');
+      $state.go('login');
     });
 
     $scope.openHelpModal = function (templateName) {

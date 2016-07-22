@@ -10,7 +10,7 @@
     });
   });
 
-  angular.module('hubDeveloperPortal').controller('sandboxCtrl', function($location, $http, $scope, cookies, $sce, constants, ngDialog) {
+  angular.module('hubDeveloperPortal').controller('sandboxCtrl', function($location, $http, $scope, cookies, $sce, constants, $timeout) {
     console.log('sandbox controller'); 
     var credsString = 'id=' + cookies.get('email') + '&xsp=' + cookies.get('xsp') + '&pwd=' + cookies.get('password');
 
@@ -92,18 +92,26 @@
       }
     };
     $scope.getContextualUser = function(){
-      // var email = $scope.email;
-      // var phoneNumber = $scope.phoneNumber;
+      $scope.refreshContextualData();
+
       var iframeWin = document.getElementById("contextual-iframe").contentWindow;
       iframeWin.postMessage('message', baseUrl.toString());
 
       iframeWin.postMessage(otherUserData, baseUrl.toString());
     };
 
-    $scope.$on('$viewContentLoaded', function() {
-      console.error('get contextual');
+    $scope.refreshContextualData = function(){
+      otherUserData.contextId = $scope.email;
+      otherUserData.buddy_profile.jid = $scope.email;
+      otherUserData.buddy_profile.name = $scope.email;
+      otherUserData.buddy_profile.phone = $scope.phoneNumber;
+    };
+
+
+    $timeout(function(){
+      $scope.refreshContextualData();
       $scope.getContextualUser();
-    });
+    }, 5000);
 
     
   });
