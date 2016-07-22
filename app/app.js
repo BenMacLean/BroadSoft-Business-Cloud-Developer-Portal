@@ -18,9 +18,10 @@
     $validationProvider.setDefaultMsg(defaultMsg);
   }]).run(function($rootScope, $location, $anchorScroll) {
   //when the route is changed scroll to the proper element.
-    $rootScope.$on('$routeChangeSuccess', function(newRoute, oldRoute) {
+    $rootScope.$on('$stateChangeSuccess', function(newRoute, oldRoute) {
+      console.log("state changed",newRoute);
       if($location.hash()){
-        $anchorScroll();  
+        $anchorScroll();
       }
     });
   });
