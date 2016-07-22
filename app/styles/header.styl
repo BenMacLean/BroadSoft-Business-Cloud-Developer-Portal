@@ -1,35 +1,35 @@
-a.topNav
-  color  white
-  font-family  roboto
-  font-weight  100
-  text-decoration  none
-  padding  10px
-  cursor pointer
-
 .topNav
   position relative
   text-align  center
   padding  20px 0
-  background-color  rgba(255,255,255,0.3)
+  height: 64px;
+  background-color black
 
-.topNav a
-  cursor pointer
-  color  #fff
-  font-family  roboto
-  font-weight  100
-  text-decoration  none
-  padding  18px
-  font-size  20px
-  text-shadow  2px 2px 3px #000
+.topNav .menu-item
+  color: #fff;
+  border-bottom: 4px solid rgba(242,170,74,0);
+  transition: 0.3s;
+  cursor: pointer;
+  font-weight: 100;
+  text-decoration: none;
+  padding: 14px 15px;
+  font-size: 16px;
+  &:hover
+    border-color: orange
 
-.topNav a hover
-  color  #C5C5C5
-  font-family  roboto
-  font-weight  100
-  text-decoration  none
-  padding  18px
-  font-size  20px
-  text-shadow  2px 2px 3px #000
+.topNav img
+  float left
+  margin-left: 20px
+  height: 25px;
+
+.right-section
+  float: right
+  margin-right: 20px
+
+.login-buttons
+  display: inline-block
+  a
+    border-radius 0
 
 .headerDropDown
   position: absolute;
@@ -39,3 +39,4 @@ a.topNav
   padding-bottom: 14px;
   a
     display block
+
