@@ -2,11 +2,8 @@
   .micro-app
     .iframe-container
       h2 MicroApp Panel
-      //help-modal
 
-
-      img.help(src="/assets/images/help-icon.png" ng-click="clickToOpen()")
-
+      img.help(src="/assets/images/help-icon.png" ng-click="openHelpModal('assets/templates/microApp.help.html')")
 
       iframe.micro-app-iframe(ng-src="{{microApps}}")
     .actions

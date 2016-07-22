@@ -105,9 +105,7 @@
       $scope.getContextualUser();
     });
 
-    $scope.clickToOpen = function () {
-      ngDialog.open({ template: 'states/internal/sandbox/microApp.help.html', className: 'ngdialog-theme-default' });
-    };
+    
   });
 })();
 
