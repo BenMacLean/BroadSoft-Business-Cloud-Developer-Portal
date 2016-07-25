@@ -29,7 +29,8 @@
     "ngstorage": "^0.3.10",
     "angular-cookies": "^1.5.7",
     "angular-bootstrap-colorpicker": "^3.0.25",
-    "angular-base64-upload": "^0.1.19"
+    "angular-base64-upload": "^0.1.19",
+    "angular-cryptography": "^1.0.1"
   },
   "resolutions": {
     "angular": "1.5.7"
