@@ -11,8 +11,11 @@
   });
 
   angular.module('hubDeveloperPortal').controller('loginCtrl', function ($scope, $rootScope, $http, $state,$sessionStorage, cookies) {
-    $scope.email = 'jon.staging@broadsoftlabs.com';
-    $scope.password = 'password';
+
+    // //TODO REMOVE FOR PROD
+    // $scope.email = 'jon.staging@broadsoftlabs.com';
+    // $scope.password = 'password';
+    
     $scope.login = function () {
       $sessionStorage.urls = [
         'https://xsp2.broadsoftlabs.com',

@@ -30,6 +30,7 @@
     "angular-cookies": "^1.5.7",
     "angular-bootstrap-colorpicker": "^3.0.25",
     "angular-base64-upload": "^0.1.19",
+    "ng-dialog": "^0.6.2",
     "angular-cryptography": "^1.0.1"
   },
   "resolutions": {

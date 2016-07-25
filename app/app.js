@@ -2,7 +2,7 @@
   'use strict';
 
   angular.module('hubDeveloperPortal', [
-    'ngRoute', 'ui.router', 'validation', 'validation.rule', 'ngStorage','ngCookies', 'colorpicker.module','naif.base64','mdo-angular-cryptography'
+    'ngRoute', 'ui.router', 'validation', 'validation.rule', 'ngStorage','ngCookies', 'colorpicker.module', 'naif.base64', 'ngDialog','mdo-angular-cryptography'
   ]).config(['$validationProvider','$cryptoProvider', function($validationProvider,$cryptoProvider) {
     var defaultMsg;
     defaultMsg = {
