@@ -10,12 +10,11 @@
     });
   });
 
-  angular.module('hubDeveloperPortal').controller('loginCtrl', function ($scope, $rootScope, $http, $state,$sessionStorage, cookies) {
+  angular.module('hubDeveloperPortal').controller('loginCtrl', function ($scope, $rootScope, $http, $state,$sessionStorage, cookies,$crypto) {
 
     // //TODO REMOVE FOR PROD
     // $scope.email = 'jon.staging@broadsoftlabs.com';
     // $scope.password = 'password';
-    
     $scope.login = function () {
       $sessionStorage.urls = [
         'https://xsp2.broadsoftlabs.com',
