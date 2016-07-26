@@ -13,18 +13,18 @@
   angular.module('hubDeveloperPortal').controller('registerCtrl', function ($location, $http, $scope, $rootScope, $state, constants, $sessionStorage, cookies) {
     console.log("constants", constants.data.hubUrl);
 
-    //Test Data to be removed
-    $scope.registeredApp = {
-      iframeUrl: 'http://localhost:5430',
-      appAdminEmail: 'joncodo@gmail.com',
-      name: 'TriviaApp-' + Math.floor(Math.random() * (10000)),
-      title: 'TestApp',
-      applicationType: 'all',
-      tags: ['files'],
-      subTagLabel: 'Test Tag',
-      isPublic: false
-    };
-    //^^ Test Data to be removed
+    // //Test Data to be removed
+    // $scope.registeredApp = {
+    //   iframeUrl: 'http://localhost:5430',
+    //   appAdminEmail: 'joncodo@gmail.com',
+    //   name: 'TriviaApp-' + Math.floor(Math.random() * (10000)),
+    //   title: 'TestApp',
+    //   applicationType: 'all',
+    //   tags: ['files'],
+    //   subTagLabel: 'Test Tag',
+    //   isPublic: false
+    // };
+    // //^^ Test Data to be removed
 
     $scope.registerApplication = function(){
       //Set the values the user did not set
@@ -33,6 +33,8 @@
       $scope.registeredApp.iconFont = base64Image;
       $scope.registeredApp.version = 2;
       $scope.registeredApp.apiVersion = 1;
+      $scope.registeredApp.name = $scope.registeredApp.name.replace(' ', '-');
+      $scope.registeredApp.title = $scope.registeredApp.name;
 
       var credsString = '?id=' + cookies.get('email') + '&xsp=' + cookies.get('xsp') + '&pwd=' + cookies.get('password');
       $http.post(constants.data.hubUrl + '/createRegisteredApp' + credsString, $scope.registeredApp).then(function (createdApp) {

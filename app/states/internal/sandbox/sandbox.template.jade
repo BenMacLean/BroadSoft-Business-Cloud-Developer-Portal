@@ -1,49 +1,36 @@
-h1 Hub Sandbox
-.iframes-container
-  .micro-app
-    .iframe-container
-      h2 MicroApp
-      iframe.micro-app-iframe(ng-src="{{microApps}}")
-    .actions
-      h3 Let's start by enabling your application from the settings page.
-      p What we will send you:
-      code
-        | GET http://<yourUrl>/v1/trivia2/authenticate?id=username
-      p Then you send us:
-      code
-        | ResponseCode: 200
-        | {
-        |    auth: 'your custom auth token'
-        | }
+.sandbox-container
+  .left-panel
+    .micro-app
+      .iframe-container
+        h2 MicroApp Panel
+        img.help(src="/assets/images/help-icon.png" ng-click="openHelpModal('assets/templates/microApp.help.html')")
+        iframe.micro-app-iframe(ng-src="{{microApps}}")
 
-      button.btn.btn-primary Reset User Auth
-
-  .notifications
-    .iframe-container
-      h2 Notifications
-      iframe.notifications-iframe(ng-src="{{notifications}}")
-    .actions
-      p This is where you can test your notifications.
-    button.btn.btn-primary(ng-click="requestNotifications(); notificationsSent = true") Request Count
-    h2 Push Notification
-    .actions
-      p Whenever this route is called, Hub will attempt to call your application for notifications and contextual data and update the user interface with that new data.
-      code
-        | POST https://core.broadsoftlabs.com/v1/:app/:username/push
-      p
-      .label
-        | User (the email used for the app authentication):
-      .form-value
-        input(type="text" ng-model="username" )
-      .label
-        | Application:
-      .form-value
-        input(type="text" ng-model="app" )
-      .label
-        | Data to send:
-      .form-value
-        textarea(ng-model="appdata" cols="45")
-      button.btn.btn-primary(ng-click="pushNotification()") Request Push Notification      
+    .notifications
+      .iframe-container
+        h2 Notifications Panel
+        img.help(src="/assets/images/help-icon.png" ng-click="openHelpModal('assets/templates/notifications.help.html')")
+        iframe.notifications-iframe(ng-src="{{notifications}}")
+      //button.btn.btn-primary(ng-click="requestNotifications(); notificationsSent = true") Request Count
+      //h2 Push Notification
+      //.actions
+      //  p Whenever this route is called, Hub will attempt to call your application for notifications and contextual data and update the user interface with that new data.
+      //  code
+      //    | POST https://core.broadsoftlabs.com/v1/:app/:username/push
+      //  p
+      //  .label
+      //    | User (the email used for the app authentication):
+      //  .form-value
+      //    input(type="text" ng-model="username" )
+      //  .label
+      //    | Application:
+      //  .form-value
+      //    input(type="text" ng-model="app" )
+      //  .label
+      //    | Data to send:
+      //  .form-value
+      //    textarea(ng-model="appdata" cols="45")
+      //  button.btn.btn-primary(ng-click="pushNotification()") Request Push Notification
 
   .api(ng-show="notificationsSent")
     h3 What we sent you:
@@ -55,19 +42,21 @@ h1 Hub Sandbox
     h3 Error Message
     p It seems you have not sent us a valid auth token please try again (Add stacktrace here.)
 
-  .contextual
-    .iframe-container
-      h2 Contextual
-      iframe#contextual-iframe.contextual-iframe(ng-src="{{contextual}}")
-    .actions
-      h3 Other User Details
-      p This is where you can test the user details in certain scenarios. Clicking the "Request Contextual Data button will cause Hub to send your application a request for contextual data.
-      .label
-        | Email:
-      .form-value
-        input(type="text" ng-model="email")
-      .label
-        | Phone Number:
-      .form-value
-        input(type="text" ng-model="phoneNumber")
-      button.btn.btn-primary(ng-click="getContextualUser()") Request Contextual Data
+  .right-panel
+    .contextual
+      .iframe-container
+        h2 Contextual Panel
+        img.help(src="/assets/images/help-icon.png" ng-click="openHelpModal('assets/templates/contextual.help.html')")
+        iframe#contextual-iframe.contextual-iframe(ng-src="{{contextual}}")
+      .actions
+        h3 Other User Details
+        img.help(src="/assets/images/help-icon.png" ng-click="openHelpModal('assets/templates/otherUserDetails.help.html')")
+        .label
+          | Email:
+        .form-value
+          input(type="text" ng-model="email")
+        .label
+          | Phone Number:
+        .form-value
+          input(type="text" ng-model="phoneNumber")
+        button.btn.btn-primary(ng-click="getContextualUser()") Request Contextual Data
