@@ -17,12 +17,10 @@
     $http.get(constants.data.hubUrl + '/getSingleApp?appName=' + $stateParams.appName + "&" + credsString).then(function (userApp) {
       $scope.registeredApp = userApp.data;
       $scope.registeredApp.appName = $scope.registeredApp.name;
-      $scope.registeredApp.isPublic = $scope.registeredApp.isPublic.toString() ;
-      console.log(userApp);
+      $scope.registeredApp.isPublic = $scope.registeredApp.isPublic.toString();
     });
     $scope.updateApplication = function () {
       $scope.registeredApp.isPublic = ($scope.registeredApp.isPublic === "true");
-      console.log("$scope.registeredApp",$scope.registeredApp);
       $http.post(constants.data.hubUrl + '/updateApp?' + credsString, $scope.registeredApp).then(function (updatedApp) {
         console.log("Your application was updated,", updatedApp);
         $state.go('internal.appsList');
