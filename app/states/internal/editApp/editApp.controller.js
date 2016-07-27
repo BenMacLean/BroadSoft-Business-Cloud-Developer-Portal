@@ -13,7 +13,7 @@
   angular.module('hubDeveloperPortal').controller('editAppCtrl', function ($location, $http, $scope, $rootScope, $state, constants, $sessionStorage, $stateParams, cookies, credString) {
     $scope.user = cookies.get('email');
     $scope.registeredApp = {};
-    $http.get(constants.data.hubUrl + '/getSingleApp?appName=' + $stateParams.appName + "&" + credString).then(function (userApp) {
+    $http.get(constants.data.hubUrl + '/getSingleApp' + credString + '&appName=' + $stateParams.appName).then(function (userApp) {
       $scope.registeredApp = userApp.data;
     });
     $scope.updateApplication = function () {
