@@ -15,7 +15,7 @@
     // //TODO REMOVE FOR PROD
     // $scope.email = 'jon.staging@broadsoftlabs.com';
     // $scope.password = 'password';
-    
+
     $scope.login = function () {
       $sessionStorage.urls = [
         'https://xsp2.broadsoftlabs.com',
@@ -31,6 +31,7 @@
           $rootScope.internal = true;
           return $state.go('internal.appsList');
         }, function (error) {
+          $scope.loginError = "The username/password is invalid";
           throw error;
         });
       };
