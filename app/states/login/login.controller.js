@@ -15,7 +15,7 @@
     // //TODO REMOVE FOR PROD
     // $scope.email = 'jon.staging@broadsoftlabs.com';
     // $scope.password = 'password';
-    
+
     $scope.login = function () {
       $sessionStorage.urls = [
         'https://xsp2.broadsoftlabs.com',
@@ -26,8 +26,8 @@
       var attemptUserLogin = function (url) {
         return $http.get('/user/login?id=' + $scope.email + '&pwd=' + $scope.password + '&xsp=' + url).then(function (response) {
           cookies.set('xsp', url);
-          cookies.set('email', $scope.email);
-          cookies.set('password', $scope.password);
+          cookies.set('email', response.data.username);
+          cookies.set('password', response.data.password);
           $rootScope.internal = true;
           return $state.go('internal.appsList');
         }, function (error) {

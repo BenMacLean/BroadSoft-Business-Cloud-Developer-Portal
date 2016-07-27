@@ -10,16 +10,13 @@
     });
   });
 
-  angular.module('hubDeveloperPortal').controller('appsListCtrl', function ($location, $http, $scope, cookies, $sce, $sessionStorage, constants) {
+  angular.module('hubDeveloperPortal').controller('appsListCtrl', function ($location, $http, $scope, cookies, $sce, $sessionStorage, constants,util,credString) {
     console.log('appsList controller');
     $scope.userApps = [];
     $scope.user = cookies.get('email');
     $scope.isLoading = true;
-
-    
     $scope.makeServerRequest = function (path, params) {
-      var credsString = '?id=' + cookies.get('email') + '&xsp=' + cookies.get('xsp') + '&pwd=' + cookies.get('password');
-      var getRequest = constants.data.hubUrl + path + credsString;
+      var getRequest = constants.data.hubUrl + path + credString;
       if (params) {
         getRequest = getRequest + '&' + params;
       }

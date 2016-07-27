@@ -10,7 +10,7 @@
     });
   });
 
-  angular.module('hubDeveloperPortal').controller('registerCtrl', function ($location, $http, $scope, $rootScope, $state, constants, $sessionStorage, cookies) {
+  angular.module('hubDeveloperPortal').controller('registerCtrl', function ($location, $http, $scope, $rootScope, $state, constants, $sessionStorage, cookies, credString) {
     console.log("constants", constants.data.hubUrl);
 
     // //Test Data to be removed
@@ -35,9 +35,7 @@
       $scope.registeredApp.apiVersion = 1;
       $scope.registeredApp.name = $scope.registeredApp.name.replace(' ', '-');
       $scope.registeredApp.title = $scope.registeredApp.name;
-
-      var credsString = '?id=' + cookies.get('email') + '&xsp=' + cookies.get('xsp') + '&pwd=' + cookies.get('password');
-      $http.post(constants.data.hubUrl + '/createRegisteredApp' + credsString, $scope.registeredApp).then(function (createdApp) {
+      $http.post(constants.data.hubUrl + '/createRegisteredApp' + credString, $scope.registeredApp).then(function (createdApp) {
         console.log("Your application was created,", createdApp);
         $state.go('internal.sandbox');
       });

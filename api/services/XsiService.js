@@ -32,6 +32,8 @@ module.exports = {
           xspTarget: client.xspUrl
         };
       }
+      profile.password = CryptoService.encrypt(params.pwd);
+      profile.username = CryptoService.encrypt(params.id);
       return profile;
     }).catch(function(e) {
       delete req.session.xsi;

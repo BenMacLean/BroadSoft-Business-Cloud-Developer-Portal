@@ -51,5 +51,9 @@ module.exports = {
   },
   constants:function (req,res) {
     return res.send(sails.config.constants);
+  },
+  decrypt:function (req,res) {
+    var params = req.allParams();
+    return res.send(CryptoService.decrypt(params.value));
   }
 };

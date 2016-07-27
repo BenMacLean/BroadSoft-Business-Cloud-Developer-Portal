@@ -29,5 +29,6 @@ module.exports.routes = {
   '/createRegisteredApp': 'UtilController.createRegisteredApp',
   '/user/login':'UserController.login',
   '/util/checkAuth':'UtilController.checkAuth',
-  '/constants':'UtilController.constants'
+  '/constants':'UtilController.constants',
+  '/decrypt':'UtilController.decrypt'
 };
