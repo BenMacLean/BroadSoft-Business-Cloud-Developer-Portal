@@ -47,7 +47,7 @@ module.exports.cors = {
   *                                                                          *
   ***************************************************************************/
 
-  origin: '*'
+  origin: '*',
 
   /***************************************************************************
   *                                                                          *
@@ -55,7 +55,7 @@ module.exports.cors = {
   *                                                                          *
   ***************************************************************************/
 
-  // credentials: true,
+  credentials: true,
   //
   // /***************************************************************************
   // *                                                                          *
@@ -64,7 +64,7 @@ module.exports.cors = {
   // *                                                                          *
   // ***************************************************************************/
   //
-  // methods: 'GET, POST, PUT, DELETE, OPTIONS, HEAD',
+  methods: 'GET, POST, PUT, DELETE, OPTIONS, HEAD',
   //
   // /***************************************************************************
   // *                                                                          *
@@ -73,8 +73,8 @@ module.exports.cors = {
   // *                                                                          *
   // ***************************************************************************/
   //
-  // headers: 'content-type, x-access-token, x-refresh-token, x-domain',
-  //
-  // exposeHeaders: 'content-type, x-access-token, x-refresh-token, x-domain'
+  headers: 'content-type, x-access-token, x-refresh-token, x-domain',
+  
+  exposeHeaders: 'content-type, x-access-token, x-refresh-token, x-domain'
 
 };
