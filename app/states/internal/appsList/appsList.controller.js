@@ -16,14 +16,20 @@
     $scope.user = cookies.get('email');
     $scope.isLoading = true;
 
-    
+
     $scope.makeServerRequest = function (path, params) {
-      var credsString = '?id=' + cookies.get('email') + '&xsp=' + cookies.get('xsp') + '&pwd=' + cookies.get('password');
-      var getRequest = constants.data.hubUrl + path + credsString;
+      var credsString = '?hubLoginToken=' + cookies.get('hubLoginToken');
+      var getRequest = constants.data.hubUrl + path +credsString;
       if (params) {
         getRequest = getRequest + '&' + params;
       }
-      return $http.get(getRequest).then(function (response) {
+      var req = {
+       method: 'GET',
+       url: getRequest,
+       withCredentials: true
+     };
+
+      return $http(req).then(function (response) {
         return response;
       });
     };

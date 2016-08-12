@@ -17,12 +17,12 @@
   });
 
   angular.module('hubDeveloperPortal').controller('internalCtrl', function($location, $http, $scope, ngDialog, $state) {
-    $http.get('/util/checkAuth').then(function (response) {
-      console.log("response",response);
-    },function(){
-      //TODO uncomment this for live
-      $state.go('login');
-    });
+    // $http.get('/util/checkAuth').then(function (response) {
+    //   console.log("response",response);
+    // },function(){
+    //   //TODO uncomment this for live
+    //   $state.go('login');
+    // });
 
     $scope.openHelpModal = function (templateName) {
       ngDialog.open({ template: templateName, className: 'ngdialog-theme-default' });
