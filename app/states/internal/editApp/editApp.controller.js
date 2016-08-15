@@ -11,14 +11,18 @@
   });
 
   angular.module('hubDeveloperPortal').controller('editAppCtrl', function ($location, $http, $scope, $rootScope, $state, constants, $sessionStorage, $stateParams, cookies) {
-    var credsString = 'id=' + cookies.get('email') + '&xsp=' + cookies.get('xsp') + '&pwd=' + cookies.get('password');
+    var params = {
+      hubLoginToken:cookies.get('hubLoginToken')
+    };
     $scope.user = cookies.get('email');
     $scope.registeredApp = {};
-    $http.get(constants.data.hubUrl + '/getSingleApp?appName=' + $stateParams.appName + "&" + credsString).then(function (userApp) {
+    $http.post(constants.data.hubUrl + '/getSingleApp?appName=' + $stateParams.appName,params).then(function (userApp) {
       $scope.registeredApp = userApp.data;
+      $scope.registeredApp.appName = $scope.registeredApp.name;
     });
     $scope.updateApplication = function () {
-      $http.post(constants.data.hubUrl + '/updateApp?' + credsString, $scope.registeredApp).then(function (updatedApp) {
+      $scope.registeredApp.hubLoginToken = cookies.get('hubLoginToken');
+      $http.post(constants.data.hubUrl + '/updateApp', $scope.registeredApp).then(function (updatedApp) {
         console.log("Your application was updated,", updatedApp);
         $state.go('internal.appsList');
       });

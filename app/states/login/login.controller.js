@@ -38,6 +38,7 @@
         };
         return $http.post(constants.data.hubUrl+'/v1/user/login',params).then(function (response) {
           cookies.set('hubLoginToken', response.data.hubLoginToken);
+          cookies.set('xsp', params.xsp);
           return $state.go('internal.appsList');
         }, function (error) {
           throw error;

@@ -18,18 +18,11 @@
 
 
     $scope.makeServerRequest = function (path, params) {
-      var credsString = '?hubLoginToken=' + cookies.get('hubLoginToken');
-      var getRequest = constants.data.hubUrl + path +credsString;
-      if (params) {
-        getRequest = getRequest + '&' + params;
-      }
-      var req = {
-       method: 'GET',
-       url: getRequest,
-       withCredentials: true
-     };
-
-      return $http(req).then(function (response) {
+      var requestParams = {
+        hubLoginToken : cookies.get('hubLoginToken')
+      };
+      var requestUrl = constants.data.hubUrl + path;
+      return $http.post(requestUrl,requestParams).then(function (response) {
         return response;
       });
     };
@@ -44,7 +37,6 @@
       $scope.makeServerRequest('/deleteRegisteredApp', params).then(function (userApps) {
         $scope.removeAppFromList(appName);
       });
-
     };
 
     $scope.removeAppFromList = function (appName) {
