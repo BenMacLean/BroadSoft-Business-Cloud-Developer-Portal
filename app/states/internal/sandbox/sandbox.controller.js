@@ -12,7 +12,7 @@
 
   angular.module('hubDeveloperPortal').controller('sandboxCtrl', function($location, $http, $scope, cookies, $sce, constants, $timeout) {
     console.log('sandbox controller'); 
-    var credsString = 'hubLoginToken=' + cookies.get('hubLoginToken') +"&xsp="+cookies.get('xsp');
+    var credsString = 'id=' + cookies.get('email') + '&xsp=' + cookies.get('xsp') + '&pwd=' + cookies.get('password');
 
     $scope.email = 'jodonnell@broadsoft.com';
     $scope.phoneNumber = '15554443333';
