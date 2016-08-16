@@ -35,9 +35,8 @@
       $scope.registeredApp.apiVersion = 1;
       $scope.registeredApp.name = $scope.registeredApp.name.replace(' ', '-');
       $scope.registeredApp.title = $scope.registeredApp.name;
-
-      var credsString = '?id=' + cookies.get('email') + '&xsp=' + cookies.get('xsp') + '&pwd=' + cookies.get('password');
-      $http.post(constants.data.hubUrl + '/createRegisteredApp' + credsString, $scope.registeredApp).then(function (createdApp) {
+      $scope.registeredApp.hubLoginToken = cookies.get('hubLoginToken');
+      $http.post(constants.data.hubUrl + '/user/app', $scope.registeredApp).then(function (createdApp) {
         console.log("Your application was created,", createdApp);
         $state.go('internal.sandbox');
       });

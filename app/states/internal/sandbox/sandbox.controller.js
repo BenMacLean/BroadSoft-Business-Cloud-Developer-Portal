@@ -113,7 +113,5 @@
       $scope.getContextualUser();
     }, 5000);
 
-    
   });
 })();
-

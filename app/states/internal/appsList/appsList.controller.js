@@ -16,29 +16,30 @@
     $scope.user = cookies.get('email');
     $scope.isLoading = true;
 
-    
-    $scope.makeServerRequest = function (path, params) {
-      var credsString = '?id=' + cookies.get('email') + '&xsp=' + cookies.get('xsp') + '&pwd=' + cookies.get('password');
-      var getRequest = constants.data.hubUrl + path + credsString;
-      if (params) {
-        getRequest = getRequest + '&' + params;
+
+    $scope.makeServerRequest = function (path, method) {
+      var requestParams = {};
+      var requestUrl = constants.data.hubUrl + path;
+      var config = {url: requestUrl, withCredentials: true};
+      if(method && method.match(/post/i)) {
+        config.data = requestParams;
+      } else {
+        config.params = requestParams;
       }
-      return $http.get(getRequest).then(function (response) {
+      return $http(config).then(function (response) {
         return response;
       });
     };
 
-    $scope.makeServerRequest('/getUserApps').then(function (userApps) {
+    $scope.makeServerRequest('/user/apps','post').then(function (userApps) {
       $scope.isLoading = false;
       $scope.userApps = userApps.data;
     });
 
     $scope.deleteApp = function (appName) {
-      var params='appName='+appName;
-      $scope.makeServerRequest('/deleteRegisteredApp', params).then(function (userApps) {
+      $scope.makeServerRequest('/app/'+appName, 'delete').then(function (userApps) {
         $scope.removeAppFromList(appName);
       });
-
     };
 
     $scope.removeAppFromList = function (appName) {

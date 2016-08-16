@@ -56,23 +56,25 @@ module.exports.cors = {
   ***************************************************************************/
 
   credentials: true,
-
-  /***************************************************************************
-  *                                                                          *
-  * Which methods should be allowed for CORS requests? This is only used in  *
-  * response to preflight requests (see article linked above for more info)  *
-  *                                                                          *
-  ***************************************************************************/
-
-  methods: 'GET, POST, PUT, DELETE, OPTIONS, HEAD'
-
-  /***************************************************************************
-  *                                                                          *
-  * Which headers should be allowed for CORS requests? This is only used in  *
-  * response to preflight requests.                                          *
-  *                                                                          *
-  ***************************************************************************/
-
-  // headers: 'content-type'
+  //
+  // /***************************************************************************
+  // *                                                                          *
+  // * Which methods should be allowed for CORS requests? This is only used in  *
+  // * response to preflight requests (see article linked above for more info)  *
+  // *                                                                          *
+  // ***************************************************************************/
+  //
+  methods: 'GET, POST, PUT, DELETE, OPTIONS, HEAD',
+  //
+  // /***************************************************************************
+  // *                                                                          *
+  // * Which headers should be allowed for CORS requests? This is only used in  *
+  // * response to preflight requests.                                          *
+  // *                                                                          *
+  // ***************************************************************************/
+  //
+  headers: 'content-type, x-access-token, x-refresh-token, x-domain',
+  
+  exposeHeaders: 'content-type, x-access-token, x-refresh-token, x-domain'
 
 };
