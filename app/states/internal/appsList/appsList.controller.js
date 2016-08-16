@@ -17,12 +17,16 @@
     $scope.isLoading = true;
 
 
-    $scope.makeServerRequest = function (path,type) {
-      var requestParams = {
-        hubLoginToken : cookies.get('hubLoginToken')
-      };
+    $scope.makeServerRequest = function (path, method) {
+      var requestParams = {};
       var requestUrl = constants.data.hubUrl + path;
-      return $http.post(requestUrl,requestParams).then(function (response) {
+      var config = {url: requestUrl, withCredentials: true};
+      if(method && method.match(/post/i)) {
+        config.data = requestParams;
+      } else {
+        config.params = requestParams;
+      }
+      return $http(config).then(function (response) {
         return response;
       });
     };
@@ -33,7 +37,7 @@
     });
 
     $scope.deleteApp = function (appName) {
-      $scope.makeServerRequest('/user/app/delete/'+appName).then(function (userApps) {
+      $scope.makeServerRequest('/user/app/'+appName, 'DELETE').then(function (userApps) {
         $scope.removeAppFromList(appName);
       });
     };
