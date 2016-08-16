@@ -36,7 +36,7 @@
       $scope.registeredApp.name = $scope.registeredApp.name.replace(' ', '-');
       $scope.registeredApp.title = $scope.registeredApp.name;
       $scope.registeredApp.hubLoginToken = cookies.get('hubLoginToken');
-      $http.post(constants.data.hubUrl + '/createRegisteredApp', $scope.registeredApp).then(function (createdApp) {
+      $http.post(constants.data.hubUrl + '/user/app', $scope.registeredApp).then(function (createdApp) {
         console.log("Your application was created,", createdApp);
         $state.go('internal.sandbox');
       });

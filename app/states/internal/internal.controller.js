@@ -20,7 +20,7 @@
     var requestParams = {
       hubLoginToken : cookies.get('hubLoginToken')
     };
-    $http.post(constants.data.hubUrl+'/checkLogin',requestParams).then(function (response) {
+    $http.post(constants.data.hubUrl+'/user/login',requestParams).then(function (response) {
       console.log("response",response);
     },function(){
       //TODO uncomment this for live

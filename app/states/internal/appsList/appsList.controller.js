@@ -17,7 +17,7 @@
     $scope.isLoading = true;
 
 
-    $scope.makeServerRequest = function (path, params) {
+    $scope.makeServerRequest = function (path,type) {
       var requestParams = {
         hubLoginToken : cookies.get('hubLoginToken')
       };
@@ -27,14 +27,13 @@
       });
     };
 
-    $scope.makeServerRequest('/getUserApps').then(function (userApps) {
+    $scope.makeServerRequest('/user/apps').then(function (userApps) {
       $scope.isLoading = false;
       $scope.userApps = userApps.data;
     });
 
     $scope.deleteApp = function (appName) {
-      var params='appName='+appName;
-      $scope.makeServerRequest('/deleteRegisteredApp', params).then(function (userApps) {
+      $scope.makeServerRequest('/user/app/delete/'+appName).then(function (userApps) {
         $scope.removeAppFromList(appName);
       });
     };

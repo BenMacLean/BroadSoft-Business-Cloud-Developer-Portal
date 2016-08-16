@@ -16,13 +16,13 @@
     };
     $scope.user = cookies.get('email');
     $scope.registeredApp = {};
-    $http.post(constants.data.hubUrl + '/getSingleApp?appName=' + $stateParams.appName,params).then(function (userApp) {
+    $http.post(constants.data.hubUrl + '/user/app/' + $stateParams.appName,params).then(function (userApp) {
       $scope.registeredApp = userApp.data;
       $scope.registeredApp.appName = $scope.registeredApp.name;
     });
     $scope.updateApplication = function () {
       $scope.registeredApp.hubLoginToken = cookies.get('hubLoginToken');
-      $http.post(constants.data.hubUrl + '/updateApp', $scope.registeredApp).then(function (updatedApp) {
+      $http.put(constants.data.hubUrl + '/user/app/'+ $scope.registeredApp.appName, $scope.registeredApp).then(function (updatedApp) {
         console.log("Your application was updated,", updatedApp);
         $state.go('internal.appsList');
       });
