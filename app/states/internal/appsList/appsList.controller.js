@@ -22,18 +22,21 @@
         hubLoginToken : cookies.get('hubLoginToken')
       };
       var requestUrl = constants.data.hubUrl + path;
-      return $http.post(requestUrl,requestParams).then(function (response) {
+      if(type === "delete"){
+        requestUrl += "?hubLoginToken=" + cookies.get('hubLoginToken');
+      }
+      return $http[type](requestUrl,requestParams).then(function (response) {
         return response;
       });
     };
 
-    $scope.makeServerRequest('/user/apps').then(function (userApps) {
+    $scope.makeServerRequest('/user/apps','post').then(function (userApps) {
       $scope.isLoading = false;
       $scope.userApps = userApps.data;
     });
 
     $scope.deleteApp = function (appName) {
-      $scope.makeServerRequest('/user/app/delete/'+appName).then(function (userApps) {
+      $scope.makeServerRequest('/app/'+appName,'delete').then(function (userApps) {
         $scope.removeAppFromList(appName);
       });
     };
