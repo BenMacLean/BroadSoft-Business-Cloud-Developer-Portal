@@ -37,7 +37,7 @@
     });
 
     $scope.deleteApp = function (appName) {
-      $scope.makeServerRequest('/user/app/'+appName, 'DELETE').then(function (userApps) {
+      $scope.makeServerRequest('/app/'+appName, 'delete').then(function (userApps) {
         $scope.removeAppFromList(appName);
       });
     };
