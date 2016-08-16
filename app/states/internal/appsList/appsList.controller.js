@@ -31,7 +31,7 @@
       });
     };
 
-    $scope.makeServerRequest('/user/apps').then(function (userApps) {
+    $scope.makeServerRequest('/user/apps','post').then(function (userApps) {
       $scope.isLoading = false;
       $scope.userApps = userApps.data;
     });
