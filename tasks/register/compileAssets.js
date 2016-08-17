@@ -3,6 +3,7 @@ module.exports = function (grunt) {
 		'clean:dev',
 		'copy:dev',
     'jade',
-    'stylus'
+    'stylus',
+		'sass'
 	]);
 };

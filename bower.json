@@ -33,6 +33,6 @@
     "ng-dialog": "^0.6.2"
   },
   "resolutions": {
-    "angular": "1.5.7"
+    "angular": "~1.5"
   }
 }

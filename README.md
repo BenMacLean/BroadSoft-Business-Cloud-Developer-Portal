@@ -6,6 +6,7 @@
 npm i -g sails
 git clone https://github.com/BroadsoftLabs/hubDeveloperPortal.git
 cd hubDeveloperPortal
+npm i -g bower
 npm i && bower i
 mkdir /Users/<yourUsername>/secure
 cd /Users/<yourUsername>/secure
