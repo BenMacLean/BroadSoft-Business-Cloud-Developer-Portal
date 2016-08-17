@@ -24,7 +24,7 @@ module.exports = function(grunt) {
 			files: ['app/**/*', 'tasks/pipeline.js', '!**/node_modules/**', '!**/bower_components/**'],
 
 			// When app are changed:
-			tasks: ['syncAssets', 'compileAssets', 'linkAssets','stylus']
+			tasks: ['syncAssets', 'compileAssets', 'linkAssets','sass']
 		}
 	});
   console.log('this grunt task');
