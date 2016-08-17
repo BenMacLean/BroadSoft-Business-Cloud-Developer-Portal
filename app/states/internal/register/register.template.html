@@ -1,0 +1,62 @@
+<div class="register-container">
+  <h1>In order to get started, please provide us with the following details:</h1>
+  <form name="Form">
+    <div class="form-group">
+      <label for="register-application-url">Your application URL</label><img src="/assets/images/help-icon.png" ng-click="openHelpModal('assets/templates/yourAppUrl.help.html')" class="help"/>
+      <input id="register-application-url" ng-model="registeredApp.iframeUrl" validator="required, url" url-error-message="Invalid Url" url-success-message=" " class="form-control"/>
+    </div>
+    <div class="form-group">
+      <label for="register-contact-email">Contact Email Address</label><img src="/assets/images/help-icon.png" ng-click="openHelpModal('assets/templates/contactEmail.help.html')" class="help"/>
+      <input id="register-contact-email" ng-model="registeredApp.appAdminEmail" type="email" validator="required" class="form-control"/>
+    </div>
+    <div class="form-group">
+      <label for="register-application-name">Application Name</label><img src="/assets/images/help-icon.png" ng-click="openHelpModal('assets/templates/applicationName.help.html')" class="help"/>
+      <input id="register-application-name" ng-model="registeredApp.name" validator="required" class="form-control"/>
+    </div>
+    <div class="form-group">
+      <label for="register-application-type">Application Type</label><img src="/assets/images/help-icon.png" ng-click="openHelpModal('assets/templates/applicationType.help.html')" class="help"/>
+      <select id="register-application-type" ng-model="registeredApp.applicationType" validator="required" class="form-control">
+        <option value="all">All</option>
+        <option value="context">Contextual Only</option>
+        <option value="microapp">MicroApp Only</option>
+      </select>
+    </div>
+    <div class="form-group">
+      <label for="register-application-type">Application Category</label><img src="/assets/images/help-icon.png" ng-click="openHelpModal('assets/templates/applicationCategory.help.html')" class="help"/>
+      <select id="register-application-type" ng-model="registeredApp.tags" multiple="multiple" validator="required" class="form-control">
+        <option value="dialogue">Dialogue</option>
+        <option value="files">Files</option>
+        <option value="social">Social</option>
+        <option value="teams">Teams</option>
+        <option value="utilities">Utilities</option>
+      </select>
+    </div>
+    <div class="form-group">
+      <label for="register-sub-category">Sub Category</label><img src="/assets/images/help-icon.png" ng-click="openHelpModal('assets/templates/subCategory.help.html')" class="help"/>
+      <input id="register-sub-category" ng-model="registeredApp.subTagLabel" max-length="10" class="form-control"/>
+    </div>
+    <div class="form-group">
+      <label for="register-icon-font">Upload an svg file for your icon</label><img src="/assets/images/help-icon.png" ng-click="openHelpModal('assets/templates/svgUpload.help.html')" class="help"/>
+      <input id="register-icon-font" type="file" ng-model="registeredApp.iconFont" base-sixty-four-input="base-sixty-four-input"/>
+    </div>
+    <div class="form-group">
+      <label for="register-icon-color">Icon Color</label><img src="/assets/images/help-icon.png" ng-click="openHelpModal('assets/templates/colorPicker.help.html')" class="help"/>
+      <input id="register-icon-color" colorpicker="hex" type="text" ng-model="registeredApp.color" class="form-control"/>
+    </div>
+    <div class="form-group"><img src="/assets/images/help-icon.png" ng-click="openHelpModal('assets/templates/publicPrivate.help.html')" class="help"/>
+      <label>Public or Private data
+        <div class="radio">
+          <label>
+            <input id="register-public-app" ng-model="registeredApp.isPublic" name="isPublic" type="radio" value="true"/>Public
+          </label>
+        </div>
+        <div class="radio">
+          <label>
+            <input id="register-private-app" ng-model="registeredApp.isPublic" name="isPublic" type="radio" value="false"/>Private
+          </label>
+        </div>
+      </label>
+    </div>
+    <button id="register-submit" validation-submit="Form" type="button" ng-click="registerApplication()" class="btn btn-primary">Register My App</button>
+  </form>
+</div>

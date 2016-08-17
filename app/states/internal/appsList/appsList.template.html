@@ -1,0 +1,13 @@
+<div class="apps-list-container">
+  <div class="row">
+    <div class="spinner"><img src="http://www.himedialabs.com/HML/img/loader.gif" ng-show="isLoading"/></div>
+    <div ng-repeat="app in userApps" class="appContainer">
+      <h3>{{app.name}}</h3>
+      <button ui-sref="internal.editApp({appName:app.name})" class="btn btn-primary appContainer">Edit</button>
+      <button ng-click="deleteApp(app.name)" class="btn btn-danger appContainer">Delete</button>
+    </div>
+  </div>
+  <div class="row">
+    <button ui-sref="internal.register" ng-show="!isLoading" class="btn btn-success form-control create">Create New App</button>
+  </div>
+</div>

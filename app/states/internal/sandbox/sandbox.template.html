@@ -1,0 +1,62 @@
+<div class="sandbox-container">
+  <div class="left-panel">
+    <div class="micro-app">
+      <div class="iframe-container">
+        <h2>MicroApp Panel</h2><img src="/assets/images/help-icon.png" ng-click="openHelpModal('assets/templates/microApp.help.html')" class="help"/>
+        <iframe ng-src="{{microApps}}" class="micro-app-iframe"></iframe>
+      </div>
+    </div>
+    <div class="notifications">
+      <div class="iframe-container">
+        <h2>Notifications Panel</h2><img src="/assets/images/help-icon.png" ng-click="openHelpModal('assets/templates/notifications.help.html')" class="help"/>
+        <iframe ng-src="{{notifications}}" class="notifications-iframe"></iframe>
+      </div>
+      <!--button.btn.btn-primary(ng-click="requestNotifications(); notificationsSent = true") Request Count-->
+      <!--h2 Push Notification-->
+      <!--.actions-->
+      <!--  p Whenever this route is called, Hub will attempt to call your application for notifications and contextual data and update the user interface with that new data.-->
+      <!--  code-->
+      <!--    | POST https://core.broadsoftlabs.com/v1/:app/:username/push-->
+      <!--  p-->
+      <!--  .label-->
+      <!--    | User (the email used for the app authentication):-->
+      <!--  .form-value-->
+      <!--    input(type="text" ng-model="username" )-->
+      <!--  .label-->
+      <!--    | Application:-->
+      <!--  .form-value-->
+      <!--    input(type="text" ng-model="app" )-->
+      <!--  .label-->
+      <!--    | Data to send:-->
+      <!--  .form-value-->
+      <!--    textarea(ng-model="appdata" cols="45")-->
+      <!--  button.btn.btn-primary(ng-click="pushNotification()") Request Push Notification-->
+    </div>
+  </div>
+  <div ng-show="notificationsSent" class="api">
+    <h3>What we sent you:</h3><code>GET https://baseurl.com/v1/:app/:username/notifications</code>
+    <h3>What you sent us:</h3><code>Response Code: 200 { "count": 12 }</code>
+    <h3>Error Message</h3>
+    <p>It seems you have not sent us a valid auth token please try again (Add stacktrace here.)</p>
+  </div>
+  <div class="right-panel">
+    <div class="contextual">
+      <div class="iframe-container">
+        <h2>Contextual Panel</h2><img src="/assets/images/help-icon.png" ng-click="openHelpModal('assets/templates/contextual.help.html')" class="help"/>
+        <iframe id="contextual-iframe" ng-src="{{contextual}}" class="contextual-iframe"></iframe>
+      </div>
+      <div class="actions">
+        <h3>Other User Details</h3><img src="/assets/images/help-icon.png" ng-click="openHelpModal('assets/templates/otherUserDetails.help.html')" class="help"/>
+        <div class="label">Email:</div>
+        <div class="form-value">
+          <input type="text" ng-model="email"/>
+        </div>
+        <div class="label">Phone Number:</div>
+        <div class="form-value">
+          <input type="text" ng-model="phoneNumber"/>
+        </div>
+        <button ng-click="getContextualUser()" class="btn btn-primary">Request Contextual Data</button>
+      </div>
+    </div>
+  </div>
+</div>
