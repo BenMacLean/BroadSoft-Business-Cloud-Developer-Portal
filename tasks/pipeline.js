@@ -15,8 +15,7 @@
 var cssFilesToInject = [
   'bower_components/ng-dialog/css/ngDialog.css',
   'bower_components/ng-dialog/css/ngDialog-theme-default.css',
-  'styles/**/*.css',
-  'styles/**/*.styl'
+  'styles/**/*.css'
 ];
 
 // Client-side javascript files to inject in order

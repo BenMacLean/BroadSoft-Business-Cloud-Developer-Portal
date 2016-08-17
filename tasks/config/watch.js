@@ -27,7 +27,6 @@ module.exports = function(grunt) {
 			tasks: ['syncAssets', 'compileAssets', 'linkAssets','sass']
 		}
 	});
-  console.log('this grunt task');
 
 	grunt.loadNpmTasks('grunt-contrib-watch');
 };
