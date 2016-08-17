@@ -1,0 +1,36 @@
+$font-stack: Helvetica, sans-serif;
+$primary-color: #333;
+body {
+  font: 100% $font-stack;
+  color: $primary-color;
+  -webkit-font-smoothing: antialiased;
+  font-family: roboto, sans-serif;
+}
+.home-page {
+  .header-section {
+    background-color: rgb(23, 34, 58);
+    background-image: linear-gradient(135deg, rgb(23, 34, 58) 30%, rgb(36, 53, 93) 100%);
+    box-sizing: border-box;
+    color: rgb(255, 255, 255);
+    font-size: 18px;
+    padding: 80px 16px 64px;
+    position: relative;
+    text-align: center;
+    .motto {}
+    .search {}
+  }
+  .our-platforms {
+    background-color: #aeaeae;
+    .icon-card {
+      box-sizing: border-box;
+      color: rgb(86, 87, 89);
+      display: block;
+      font-family: roboto, sans-serif;
+      font-size: 18px;
+      max-width: 960px;
+      overflow-x: hidden;
+      overflow-y: hidden;
+      z-index: auto;
+    }
+  }
+}
