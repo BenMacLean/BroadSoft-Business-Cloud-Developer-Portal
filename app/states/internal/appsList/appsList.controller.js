@@ -20,7 +20,7 @@
     $scope.makeServerRequest = function (path, method) {
       var requestParams = {};
       var requestUrl = constants.data.hubUrl + path;
-      var config = {url: requestUrl, withCredentials: true};
+      var config = {url: requestUrl, withCredentials: true,method:method};
       if(method && method.match(/post/i)) {
         config.data = requestParams;
       } else {
@@ -31,13 +31,13 @@
       });
     };
 
-    $scope.makeServerRequest('/user/apps','post').then(function (userApps) {
+    $scope.makeServerRequest('/user/apps','get').then(function (userApps) {
       $scope.isLoading = false;
       $scope.userApps = userApps.data;
     });
 
     $scope.deleteApp = function (appName) {
-      $scope.makeServerRequest('/app/'+appName, 'delete').then(function (userApps) {
+      $scope.makeServerRequest('/users/app/'+appName+"/destroy", 'delete').then(function (userApps) {
         $scope.removeAppFromList(appName);
       });
     };
