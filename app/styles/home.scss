@@ -16,11 +16,24 @@ body {
     padding: 80px 16px 64px;
     position: relative;
     text-align: center;
-    .motto {}
-    .search {}
+
+    .logoLargeWhite{
+      padding-bottom: 25px;
+    }
+
+    .motto {
+      padding-bottom: 20px;
+    }
+
+    input {
+      max-width: 900px;
+      margin: 0 auto;
+      margin-left: auto;
+      margin-right: auto;
+    }
   }
   .our-platforms {
-    background-color: #aeaeae;
+    background-color: #fff;
     display: block;
     box-sizing: border-box;
     color: rgb(33, 33, 33);
@@ -36,7 +49,7 @@ body {
     .icon-card {
       box-sizing: border-box;
       color: rgb(86, 87, 89);
-      display: block;
+      display: inline-block;
       font-family: roboto, sans-serif;
       font-size: 18px;
       max-width: 960px;
@@ -44,6 +57,7 @@ body {
       overflow-y: hidden;
       z-index: auto;
       text-align: center;
+      padding: 45px;
     }
   }
 }
