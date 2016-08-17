@@ -27,6 +27,6 @@
   });
 
   angular.module('hubDeveloperPortal').config(function ($urlRouterProvider) {
-    $urlRouterProvider.otherwise('/login');
+    $urlRouterProvider.otherwise('/home');
   });
 })();

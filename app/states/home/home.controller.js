@@ -2,9 +2,9 @@
   'use strict';
 
   angular.module('hubDeveloperPortal').config(function ($stateProvider) {
-    $stateProvider.state('login', {
-      url: '/login',
-      templateUrl: 'states/login/login.template.html',
+    $stateProvider.state('home', {
+      url: '/home',
+      templateUrl: 'states/home/home.template.html',
       resolve: {
         constants: function ($http) {
           return $http.get('/constants').then(function (constants) {
@@ -12,11 +12,11 @@
           });
         }
       },
-      controller: 'loginCtrl'
+      controller: 'homeCtrl'
     });
   });
 
-  angular.module('hubDeveloperPortal').controller('loginCtrl', function ($scope, $rootScope, $http, $state,$sessionStorage, cookies,constants, $cookies) {
+  angular.module('hubDeveloperPortal').controller('homeCtrl', function ($scope, $rootScope, $http, $state,$sessionStorage, cookies,constants, $cookies) {
 
     // //TODO REMOVE FOR PROD
     // $scope.email = 'jon.staging@broadsoftlabs.com';
@@ -38,13 +38,11 @@
         };
         return $http.post(constants.data.hubUrl+'/v1/user/login',params).then(function (response) {
           cookies.set('hubLoginToken', response.data.hubLoginToken);
-          $cookies.put('local', response.data.hubLoginToken);
           cookies.set('xsp', url);
           cookies.set('email', $scope.email);
           cookies.set('password', $scope.password);
           return $state.go('internal.appsList');
         }, function (error) {
-          $scope.loginError = "The username/password is invalid";
           throw error;
         });
       };
