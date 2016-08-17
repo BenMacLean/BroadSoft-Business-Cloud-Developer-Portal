@@ -43,6 +43,7 @@
           cookies.set('password', $scope.password);
           return $state.go('internal.appsList');
         }, function (error) {
+          $scope.loginError = "The username/password is invalid";
           throw error;
         });
       };
