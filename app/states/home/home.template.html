@@ -1,28 +1,6 @@
-
-//Old Login Code
-
-//.login-container
-//  custom-header(internal="$root.internal")
-//
-//  .login-splash.login-half
-//    .content
-//      h1 Hub Developer Program
-//
-//  .login-actions.login-half
-//    .content
-//      .form-item
-//        .username.inline-block
-//          | Username:
-//        input.inline-block(type="text" ng-model="email")
-//      .form-item
-//        .password.inline-block
-//          | Password:
-//        input.inline-block(type="password" ng-model="password")
-//      a.hub-button.login-button(href="#" ng-click="login()")
-//        | Login
-//      .form-item
-//        label
-//        {{loginError}}
+ //Old Login Code //.login-container // custom-header(internal="$root.internal") // // .login-splash.login-half // .content // h1 Hub Developer Program // // .login-actions.login-half // .content // .form-item // .username.inline-block // | Username:
+// input.inline-block(type="text" ng-model="email") // .form-item // .password.inline-block // | Password: // input.inline-block(type="password" ng-model="password") // a.hub-button.login-button(href="#" ng-click="login()") // | Login // .form-item //
+label // {{loginError}}
 
 <custom-header internal="false"></custom-header>
 <div class="home-page">
@@ -42,40 +20,35 @@
     <div class="link-drop-down">Contact Us</div>
   </div>
   <div class="link-button">Get Started</div>
-  <div class="header-section"><img class="broadsoft-logo"/>
-    <div class="logoLargeWhite"><img src="/assets/images/logoLargeWhite.png"></div>
-    <div class="motto">Build awesome apps for work</div>
-    <div class="search">
-      <input type="text" class="global-search"/>
-    </div>
+
+  <div class="header-section">
+    <img src="/assets/images/logoLargeWhite.png">
+    <div>Build awesome apps for work</div>
+    <input type="text" class="global-search" />
   </div>
-  <div class="our-platforms">
-    <div class="icon-card">
-      <img class="uc-one" src="/assets/images/cloud.png"/>
-      <div class="subimage">
-        UC-One
+  <div class="our-platforms row">
+    <div class="small-12 medium-6 large-3 columns">
+      <div class="card-container">
+        <img class="uc-one" src="/assets/images/cloud.png" /> UC-One
       </div>
     </div>
-    <div class="icon-card">
-      <img class="team-one" src="/assets/images/droid.png"/>
-      <div class="subimage">
-        Team-One
+    <div class="small-12 medium-6 large-3 columns">
+      <div class="card-container">
+        <img class="team-one" src="/assets/images/droid.png" /> Team-One
       </div>
     </div>
-    <div class="icon-card">
-      <img src="/assets/images/firebase.png" class="cc-one"/>
-      <div class="subimage">
-        CC-One
+    <div class="small-12 medium-6 large-3 columns">
+      <div class="card-container">
+        <img src="/assets/images/firebase.png" class="cc-one" /> CC-One
       </div>
     </div>
-    <div class="icon-card">
-      <img src="/assets/images/maps.png" class="hub"/>
-      <div class="subimage">
-        Hub
+    <div class="small-12 medium-6 large-3 columns">
+      <div class="card-container">
+        <img src="/assets/images/maps.png" class="hub" /> Hub
       </div>
     </div>
   </div>
-  <div class="how-it-all-fits-together">How it all fits together<img class="product-connection-web"/>
+  <div class="how-it-all-fits-together">How it all fits together<img class="product-connection-web" />
     <button class="learn-more">Learn More</button>
   </div>
   <div class="featured-apps-caroussel">
@@ -83,26 +56,26 @@
     <!--Use fake data and sample text for now-->
   </div>
   <div class="use-cases">
-    <div class="icon-card large"><img class="uc-one"/>Team Communication</div>
-    <div class="icon-card large"><img class="uc-one"/>Contextual Data</div>
-    <div class="icon-card large"><img class="uc-one"/>Chat bots</div>
-    <div class="icon-card large"><img class="uc-one"/>Web hooks</div>
+    <div class="large"><img class="uc-one" />Team Communication</div>
+    <div class="large"><img class="uc-one" />Contextual Data</div>
+    <div class="large"><img class="uc-one" />Chat bots</div>
+    <div class="large"><img class="uc-one" />Web hooks</div>
   </div>
   <!--This is from slack.com-->
-  <div class="lets-do-this"><img class="get-started-icon"/>
+  <div class="lets-do-this"><img class="get-started-icon" />
     <p>Let us help you get up and running to create an awesome app for your customers</p>
     <button class="get-started">Get Started</button>
   </div>
   <div class="keep-in-touch">Keep in touch
     <p>Not ready to sign up? Provide us with your email and we will update you as new features happen so you can stay in the loop.</p>
-    <input class="your-email"/>
+    <input class="your-email" />
     <button class="keep-me-informed">Keep me informed</button>
   </div>
   <div class="more-information">
-    <div class="icon-card gray"><img class="conferences"/>Conferences</div>
-    <div class="icon-card gray"><img class="conferences"/>Blog</div>
-    <div class="icon-card gray"><img class="conferences"/>Videos</div>
-    <div class="icon-card gray"><img class="conferences"/>Tutorials</div>
+    <div class="gray"><img class="conferences" />Conferences</div>
+    <div class="gray"><img class="conferences" />Blog</div>
+    <div class="gray"><img class="conferences" />Videos</div>
+    <div class="gray"><img class="conferences" />Tutorials</div>
   </div>
   <div class="footer-info">
     <div class="column">Make it
@@ -135,11 +108,11 @@
       <div class="line-item">Status</div>
     </div>
   </div>
-  <div class="footer-main"><img class="logo"/>
+  <div class="footer-main"><img class="logo" />
     <div class="back">Back to the main site</div>
     <div class="copyright">C 1999-2016 Broadsoft, Inc. All rights reserved.</div>
     <div class="social-icons">
-      <div class="icon-circle"><img class="twitter"/><img class="youtube"/><img class="linkedin"/></div>
+      <div class="icon-circle"><img class="twitter" /><img class="youtube" /><img class="linkedin" /></div>
     </div>
   </div>
 </div>
