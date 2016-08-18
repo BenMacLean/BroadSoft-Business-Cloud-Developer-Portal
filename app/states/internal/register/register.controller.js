@@ -10,7 +10,7 @@
     });
   });
 
-  angular.module('hubDeveloperPortal').controller('registerCtrl', function ($location, $http, $scope, $rootScope, $state, constants, $sessionStorage, cookies) {
+  angular.module('hubDeveloperPortal').controller('registerCtrl', function ($location, $http, $scope, $rootScope, $state, constants, $sessionStorage, cookies, credString) {
     console.log("constants", constants.data.hubUrl);
 
     // //Test Data to be removed

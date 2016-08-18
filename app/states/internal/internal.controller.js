@@ -10,6 +10,9 @@
           return $http.get('/constants').then(function (constants) {
             return constants;
           });
+        },
+        credString: function (util) {
+          return util.populateCredsString();
         }
       },
       controller: 'internalCtrl'
