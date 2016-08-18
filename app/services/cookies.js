@@ -9,7 +9,7 @@
     service.set = function (key, value) {
       var opts = {};
       opts.expires = oneYearFromNow;
-      service.key = value;
+      service['hubSandbox_' + key] = value;
       return service.encrypt(value).then(function (response) {
         return $cookies.put('hubSandbox_' + key, response, opts);
       });
