@@ -17,6 +17,7 @@
   });
 
   angular.module('hubDeveloperPortal').controller('internalCtrl', function($location, $http, $scope, ngDialog, $state,constants,cookies) {
+
     var requestParams = {
       hubLoginToken : cookies.get('hubLoginToken')
     };

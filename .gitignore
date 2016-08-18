@@ -20,3 +20,4 @@ nbproject
 .node_history
 deploy
 shipitfile.js
+config/constants.js
