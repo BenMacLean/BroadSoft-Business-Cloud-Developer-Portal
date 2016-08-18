@@ -10,7 +10,7 @@
     });
   });
 
-  angular.module('hubDeveloperPortal').controller('appsListCtrl', function ($location, $http, $scope, cookies, $sce, $sessionStorage, constants,util,credString) {
+  angular.module('hubDeveloperPortal').controller('appsListCtrl', function ($location, $http, $scope, cookies, $sce, $sessionStorage, constants) {
     console.log('appsList controller');
     $scope.userApps = [];
     $scope.user = cookies.get('email');

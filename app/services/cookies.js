@@ -16,10 +16,20 @@
     };
 
     service.get = function (key) {
-      if(service[key]){
-        return service[key];
+      if(service['hubSandbox_'+key]){
+        return service['hubSandbox_'+key];
       }
       return $cookies.get('hubSandbox_'+key);
+    };
+    service.getAll = function () {
+      var allCookies = $cookies.getAll();
+      Object.keys(allCookies).map(function (value) {
+        service.decrypt($cookies.get(value)).then(function (response) {
+          if(response){
+            service[value] = response;
+          }
+        });
+      });
     };
     service.decrypt = function (value) {
       return $http.get("/decrypt?value="+value).then(function (response) {
@@ -31,9 +41,7 @@
         return response.data;
       });
     };
-
-
-
+    service.getAll();
     return service;
   });
 })();
