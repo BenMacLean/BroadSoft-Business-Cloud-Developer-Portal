@@ -4,7 +4,7 @@
   angular.module('hubDeveloperPortal').config(function ($stateProvider) {
     $stateProvider.state('internal.editApp', {
       url: '/editApp?appName',
-      templateUrl: 'states/internal/editApp/editApp.template.html',
+      templateUrl: 'states/internal/editApp/editApp.html',
       resolve: {},
       controller: 'editAppCtrl'
     });

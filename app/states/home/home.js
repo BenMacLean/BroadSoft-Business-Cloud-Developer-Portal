@@ -4,7 +4,7 @@
   angular.module('hubDeveloperPortal').config(function ($stateProvider) {
     $stateProvider.state('home', {
       url: '/home',
-      templateUrl: 'states/home/home.template.html',
+      templateUrl: 'states/home/home.html',
       resolve: {
         constants: function ($http) {
           return $http.get('/constants').then(function (constants) {

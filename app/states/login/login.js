@@ -4,7 +4,7 @@
   angular.module('hubDeveloperPortal').config(function ($stateProvider) {
     $stateProvider.state('login', {
       url: '/login',
-      templateUrl: 'states/login/login.template.html',
+      templateUrl: 'states/login/login.html',
       resolve: {
         constants: function ($http) {
           return $http.get('/constants').then(function (constants) {
