@@ -4,7 +4,7 @@
   angular.module('hubDeveloperPortal').config(function ($stateProvider) {
     $stateProvider.state('internal.appsList', {
       url: '/appsList',
-      templateUrl: 'states/internal/appsList/appsList.template.html',
+      templateUrl: 'states/internal/appsList/appsList.html',
       resolve: {},
       controller: 'appsListCtrl'
     });

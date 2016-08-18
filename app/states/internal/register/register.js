@@ -4,7 +4,7 @@
   angular.module('hubDeveloperPortal').config(function ($stateProvider) {
     $stateProvider.state('internal.register', {
       url: '/register',
-      templateUrl: 'states/internal/register/register.template.html',
+      templateUrl: 'states/internal/register/register.html',
       resolve: {},
       controller: 'registerCtrl'
     });

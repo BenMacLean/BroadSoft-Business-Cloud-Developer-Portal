@@ -1,0 +1,23 @@
+<div class="login-container">
+  <custom-header internal="$root.internal"></custom-header>
+  <div class="login-splash login-half">
+    <div class="content">
+      <h1>Hub Developer Program</h1>
+    </div>
+  </div>
+  <div class="login-actions login-half">
+    <div class="content">
+      <div class="form-item">
+        <div class="username inline-block">Username:</div>
+        <input type="text" ng-model="email" class="inline-block"/>
+      </div>
+      <div class="form-item">
+        <div class="password inline-block">Password:</div>
+        <input type="password" ng-model="password" class="inline-block"/>
+      </div><a href="#" ng-click="login()" class="hub-button login-button">Login</a>
+      <div class="form-item">
+        <label></label>{{loginError}}
+      </div>
+    </div>
+  </div>
+</div>

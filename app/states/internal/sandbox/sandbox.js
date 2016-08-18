@@ -4,7 +4,7 @@
   angular.module('hubDeveloperPortal').config(function($stateProvider) {
     $stateProvider.state('internal.sandbox', {
       url: '/sandbox',
-      templateUrl: 'states/internal/sandbox/sandbox.template.html',
+      templateUrl: 'states/internal/sandbox/sandbox.html',
       resolve: {},
       controller: 'sandboxCtrl'
     });

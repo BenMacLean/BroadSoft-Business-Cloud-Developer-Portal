@@ -4,7 +4,7 @@
   angular.module('hubDeveloperPortal').config(function ($stateProvider) {
     $stateProvider.state('docs', {
       url: '/docs',
-      templateUrl: 'states/docs/docs.template.html',
+      templateUrl: 'states/docs/docs.html',
       resolve: {},
       controller: 'docsCtrl'
     });
