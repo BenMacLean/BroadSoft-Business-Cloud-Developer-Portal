@@ -21,7 +21,6 @@
     var requestParams = {
       hubLoginToken : cookies.get('hubLoginToken')
     };
-    console.log("requestParams",requestParams);
     $http.post(constants.data.hubUrl+'/user/login',requestParams).then(function (response) {
       console.log("response",response);
     },function(){
