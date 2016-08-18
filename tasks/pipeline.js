@@ -38,7 +38,7 @@ var jsFilesToInject = [
   'app.js',
   'directives/**/*.js',
   'services/**/*.js',
-  'states/**/*.controller.js'
+  'states/**/*.js'
 ];
 
 // Client-side HTML templates are injected using the sources below

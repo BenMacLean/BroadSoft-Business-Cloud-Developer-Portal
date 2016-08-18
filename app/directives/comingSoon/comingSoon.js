@@ -1,14 +1,14 @@
 (function () {
   'use strict';
 
-  angular.module('hubDeveloperPortal').directive('formItem', function() {
+  angular.module('hubDeveloperPortal').directive('comingSoon', function() {
     return {
       scope: {
         label: '=label',
         value: '=value',
         model: '=model'
       },
-      templateUrl: '/directives/formItem.template.html'
+      templateUrl: '/directives/comingSoon/comingSoon.html'
     };
   });
 })();

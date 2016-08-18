@@ -2,9 +2,9 @@
   'use strict';
 
   angular.module('hubDeveloperPortal').config(function ($stateProvider) {
-    $stateProvider.state('home', {
-      url: '/home',
-      templateUrl: 'states/home/home.template.html',
+    $stateProvider.state('login', {
+      url: '/login',
+      templateUrl: 'states/login/login.html',
       resolve: {
         constants: function ($http) {
           return $http.get('/constants').then(function (constants) {
@@ -12,16 +12,11 @@
           });
         }
       },
-      controller: 'homeCtrl'
+      controller: 'loginCtrl'
     });
   });
 
-  angular.module('hubDeveloperPortal').controller('homeCtrl', function ($scope, $rootScope, $http, $state,$sessionStorage, cookies,constants, $cookies) {
-
-    // //TODO REMOVE FOR PROD
-    // $scope.email = 'jon.staging@broadsoftlabs.com';
-    // $scope.password = 'password';
-
+  angular.module('hubDeveloperPortal').controller('loginCtrl', function ($scope, $rootScope, $http, $state,$sessionStorage, cookies,constants, $cookies) {
     $scope.login = function () {
       $sessionStorage.urls = [
         'https://xsp2.broadsoftlabs.com',
