@@ -1,13 +1,13 @@
-<div class="header external">
+<div class="header external row">
 
-  <span class="left-section">
-    <a href="/#/">
-      <img src="/assets/images/header_logo.png"> Broadsoft
+  <div class="left-section small-6 medium-6 large-3 column">
+    <a class="broadsoft" href="/#/">
+      <img src="/assets/images/headerLogoGrayscale.png"> Broadsoft
     </a>
-    <a href="">| Developers</a>
-  </span>
+    <a class="developers" href="">Developers</a>
+  </div>
 
-  <span class="right-section">
+  <div class="right-section small-6 medium-6 large-9 column">
     <a href="/#/useCases" ng-click="sampleHovered = !sampleHovered" ng-init="sampleHovered = false">Use Cases</a>
     <div class="headerDropDown" ng-show="useCasesHovered" ng-mouseleave="useCasesHovered = false" >
       <a href="/#/useCases?section=item1">Item 1</a>
@@ -40,6 +40,6 @@
 
     <!--<a class="menu-item" href="/#/login" ng-show="internal">Login</a>-->
 
-  </span>
+  </div>
 
 </div>
